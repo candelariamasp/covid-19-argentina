@@ -1,12 +1,11 @@
 var config = {    
     accessToken: 'pk.eyJ1IjoiY2FuZGVsYXJpYW1hc3AiLCJhIjoiY2s4OHRpenVuMGNmeDNqbzF1ZmNnN2FwciJ9.e6kBICzbQ_RPjMFy5SgBtw',
-    style: 'mapbox://styles/candelariamasp/ck8ad6zxn0y6y1ipfb4g33chl',
+    style: 'mapbox://styles/candelariamasp/ckcwhpbke09ex1io49t31cgew',
     theme: 'light',
     alignment: 'left',
-    toptitle: 'Candelaria Mas Pohmajevic | Julio 2020',
+    toptitle: "Candelaria Mas Pohmajevic | Julio 2020",
     title: 'Pobreza y Pandemia en Latinoamérica: el caso de Buenos Aires',
-    /*byline: 'Candelaria Mas Pohmajevic',*/
-    description: '<p>Al inicio de la pandemia del coronavirus, algunos presidentes latinoamericanos lo llamaron despectivamente "el virus de los ricos." Sin embargo, el COVID-19 no distingue sexo, religión o nacionalidad, y se propaga a tasas letales en comunidades donde el acceso a condiciones de vida y sanidad dignas no existen. Es por ello que en Latinoamérica los casos de contagios han "explotado" en los asentamientos informales como villas miseria o favelas donde el hacinamiento y la carencia de espacios públicos son moneda corriente.</p><p>La latinoamérica post pandemia debe enfocarse en desarrollar ciudades resilientes soportadas por estructuras de comunidad que sean partícipes de la creación y evolución del espacio que habitan, el modelo de gobernanza usual "desde arriba" es obsoleto y pone en riesgo a toda la población.</p>',
+    description: '<p>Al inicio de la pandemia del coronavirus, algunos presidentes latinoamericanos lo llamaron despectivamente "el virus de los ricos." Sin embargo, el COVID-19 no distingue sexo, religión o nacionalidad, y se propaga a tasas letales en comunidades donde el acceso a condiciones de vida y sanidad dignas no existen. Es por ello que en Latinoamérica los casos de contagios han "explotado" en los asentamientos informales como villas miseria o favelas donde el hacinamiento y la carencia de espacios públicos son moneda corriente. <br /><br />La Latinoamérica post-pandemia debe enfocarse en desarrollar ciudades resilientes soportadas por estructuras de comunidad partícipes de la creación y evolución del espacio que habitan, el modelo de gobernanza usual "desde arriba" es obsoleto y pone en riesgo a toda la población.</p>',
     footer: 'Esta historia se basa en datos de <a https://recursos-gis-covid-19-aeroterra.hub.arcgis.com/pages/datos-abiertos">Aeroterra</a>, Mapas de Vulnerabilidad del <http://datosabiertos.aeroterra.com/datasets/8ecd8e8d4703446781fcf8703473a56b_0?showData=true">Censo de 2010 del INDEC</a> y datos de casos de COVID-19 <a href="https://www.lanacion.com.ar/sociedad/provincia-provincia-mapa-del-coronavirus-argentina-nid2344407">en Argentina</a> y <a href="https://www.lanacion.com.ar/sociedad/municipio-municipio-mapa-del-coronavirus-provincia-buenos-nid2358970">en la Provincia de Buenos Aires</a> por Diario La Nación.</a>',
     footerAttribution: '<a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox</a> | <a href="http://www.openstreetmap.org/about/" target="_blank">© OpenStreetMap</a> | <a href="https://www.linkedin.com/in/candelariamasp/">Candelaria Mas Pohmajevic</a> | <a>Architect and Urban Designer, Columbia GSAPP</a>',
     chapters: [
@@ -115,11 +114,11 @@ var config = {
             ]
         },
 
-        {//8 BAVillas
+        {//7 BAVillas
             id: 'BAVillas',
             title: 'Barrios populares, alta vulnerabilidad ',
             image: 'images/4-Vulnerabilidad.png',
-            description: 'Los habitantes más vulnerables de Buenos Aires viven en asentamientos informales ubicados principalmente en el Área Metropolitana de Buenos Aires, en la periferia de la Ciudad Autónoma de Buenos Aires (CABA), donde está la capital de Argentina. La combinación de factores de bajos niveles de acceso a la salud, a la educación y a los servicios básicos, junto con el hacinamiento determinan dicha vulnerabilidad y el riesgo de contraer enfermedades está directamente relacionado con ellos.',
+            description: 'Los habitantes más vulnerables de Buenos Aires viven en asentamientos informales ubicados principalmente en el Área Metropolitana de Buenos Aires, en la periferia de la Ciudad Autónoma de Buenos Aires (CABA), la capital de Argentina. La combinación de factores de bajos niveles de acceso a la salud, a la educación y a los servicios básicos, junto con el hacinamiento determinan dicha vulnerabilidad y el riesgo de contraer enfermedades está directamente relacionado con ellos.',
             source: '<a href="http://datosabiertos.aeroterra.com/datasets/8ecd8e8d4703446781fcf8703473a56b_0?geometry=148.828%2C-59.791%2C83.964%2C-13.392&showData=true">Aeroterra, ESRI</a>',
             location: {
                 center: [-58.695696, -34.619016],
@@ -161,20 +160,20 @@ var config = {
             ]
         },
 
-        {//9 Condiciones Precarias
+        {//8 Condiciones Precarias
             id: 'picture6',
             title: '<span class="lighter">Pobreza y precarias condiciones de habitabilidad</span>',
-            description: "<span class='lighter'>Las comunidades más pobres han sido las más afectadas alrededor del mundo. En Buenos Aires, los habitantes de asentamientos informales padecen en mayor medida afecciones como <a href='https://blogs.iadb.org/ideas-matter/en/poor-health-poverty-and-the-challenges-of-covid-19-in-latin-america-and-the-caribbean/'>diabetes, obesidad, hipertensión y malnutrición</a>, convirtiéndolos en grupo de riesgo de contraer el coronavirus. Además, la precariedad de las viviendas y barrios que habitan los residentes de estos asentamientos informales ha sido un factor central en el contagio del COVID-19.<span class='credit'>Crédito de Imagen: <a href='https://www.lanacion.com.ar/sociedad/coronavirus-argentina-temor-vecinos-villa-itati-casos-nid2370454'>Diario La Nación</a></span>",
+            description: "<span class='lighter'>LLas comunidades más pobres han sido las más afectadas alrededor del mundo. En Buenos Aires, los habitantes de asentamientos informales padecen en mayor medida afecciones como <a href='https://blogs.iadb.org/ideas-matter/en/poor-health-poverty-and-the-challenges-of-covid-19-in-latin-america-and-the-caribbean/'>diabetes, obesidad, hipertensión y malnutrición</a>, convirtiéndolos en grupo de riesgo de contraer el coronavirus. Además, la precariedad de las viviendas y barrios que habitan los residentes de estos asentamientos informales ha sido un factor central en el contagio del COVID-19.<span class='credit'>Crédito de Imagen: <a href='https://www.lanacion.com.ar/sociedad/coronavirus-argentina-temor-vecinos-villa-itati-casos-nid2370454'>Diario La Nación</a></span>",
             location: {},
             onChapterEnter: [],
             onChapterExit: []
         },
 
-        {//10 AMBA Covid
+        {//9 AMBA Covid
             id: 'ambaCovid',
             title: 'Área Metropolitana de Buenos Aires: villas miseria y coronavirus',
             image: 'images/3-AMBA Covid.png',
-            description: "Los distritos donde se concentra una mayor cantidad de barrios populares son los más afectados por el coronavirus. Aunque los casos habían comenzado en la CABA, la situación allí ha mejorado y el foco de infección actualmente se encuentra en los barrios populares, donde los habitantes son pobres y viven en condiciones precarias. Las zonas más afectadas son Avellaneda, Quilmes y La Matanza. La falta de acceso al agua imposibilita a los habitantes ejercer prácticas mínimas de sanidad para combatir el virus y su transmisión. Sus viviendas son de bajísima calidad material y constructiva y viven hacinados (más de 1 persona por habitación), incrementando la posibilidad de exposición al virus y posterior contagio. El espacio público, que ha demostrado ser <a href='https://gehlpeople.com/blog/public-space-plays-vital-role-in-pandemic/'>un aliado en la pelea contra la propagación del virus en ciudades globales</a>, es casi inexistente en los asentamientos informales. La vulnerabilidad de los residentes de villas miseria ya era evidente y se exacerbó desde que apareció el coronavirus." ,
+            description: "Los distritos donde se concentra una mayor cantidad de barrios populares son los más afectados por el coronavirus. Aunque los casos habían comenzado en la CABA, la situación allí ha mejorado y el foco de infección actualmente se encuentra en los barrios populares, donde los habitantes viven en condiciones de precariedad y pobreza. Las zonas más afectadas son Avellaneda, Quilmes y La Matanza. La falta de acceso al agua imposibilita a los habitantes ejercer prácticas mínimas de sanidad para combatir el virus y su transmisión. Sus viviendas son de bajísima calidad material y constructiva y viven hacinados (más de 1 persona por habitación), incrementando la posibilidad de exposición al virus y posterior contagio. El espacio público, que ha demostrado ser <a href='https://gehlpeople.com/blog/public-space-plays-vital-role-in-pandemic/'>un aliado en la pelea contra la propagación del virus en ciudades globales</a>, es casi inexistente en los asentamientos informales. La vulnerabilidad de los residentes de villas miseria ya era evidente y se exacerbó desde que apareció el coronavirus." ,
             source: '<a href="https://www.lanacion.com.ar/sociedad/municipio-municipio-mapa-del-coronavirus-provincia-buenos-nid2358970">Diario La Nación</a>',
             location: {
                 center: [-58.695696, -34.619016],
@@ -217,7 +216,7 @@ var config = {
                 
         },
 
-        {//11 El Caso de Itati y Azul
+        {//10 El Caso de Itati y Azul
             id: 'ItatiAzulPobreza',
             title: 'Villas Itatí y Azul, vulnerabilidad extrema y foco del COVID-19',
             image: 'images/5-Vilnerabilidad Villa.png',
@@ -255,10 +254,10 @@ var config = {
             ]
         },
 
-        {//7 Aislacion impuesta
+        {//11 Aislacion impuesta
             id: 'picture8',
             title: '<span class="lighter">Villas miseria, aislación impuesta</span>',
-            description: '<span class="lighter">En un atropello a las libertades individuales y colectivas, sumado a las deudas sostenidas con las villas miseria, las autoridades a distintos niveles locales, regionales y nacionales decidieron acordonar las Villas Itatí y Azul del resto de la ciudad, enfatizando todavía más su evidente segregación urbana y social. Por medio de una aislación obligatoria reforzada por la policía, ambos asentamientos fueron "desconectados" de su entorno por 14 días suscitando una reacción crítica por parte de los mismos habitantes y organizaciones de derechos humanos que reclamaron que dichas medidas empeorarían la innegable situación de aislamiento socio-económico, espacial y de salud ya existentes en las villas miseria. El gobernador de la Provincia de Buenos Aires Kiciloff retrucó diciendo que hubiera tomado la misma medida extremista de aislamiento en caso de tratarse de un pico de casos en un barrio privado. Preocupa la soltura con la que aboga por disminuir las libertades de los habitantes que representa y su falta de coherencia al creer que fuera posible un pico de casos de COVID-19 en un afluente barrio privado donde los recursos, el espacio y la información abundan en calidad y cantidad para evitar los contagios.</span>',
+            description: '<span class="lighter">En un atropello a las libertades individuales y colectivas, sumado a las deudas sostenidas con las villas miseria, las autoridades locales, regionales y nacionales decidieron acordonar las Villas Itatí y Azul del resto de la ciudad, enfatizando todavía más su evidente segregación urbana y social. Por medio de una aislación obligatoria reforzada por la policía, ambos asentamientos fueron "desconectados" de su entorno por 14 días suscitando una reacción crítica por parte de los mismos habitantes y organizaciones de derechos humanos que reclamaron que dichas medidas empeorarían la innegable situación de aislamiento socio-económico, espacial y de salud ya existentes en las villas miseria. El gobernador de la Provincia de Buenos Aires Kiciloff retrucó diciendo que hubiera tomado la misma medida extremista de aislamiento en caso de tratarse de un pico de casos en un barrio privado. Preocupa la soltura con la que aboga por disminuir las libertades de los habitantes que representa y su falta de coherencia al creer que fuera posible un pico de casos de COVID-19 en un afluente barrio privado donde los recursos, el espacio y la información abundan en calidad y cantidad para evitar los contagios.</span>',
             /*audio: "<audio controls preload='none'><source src='audio/interview_gentrification_infrast_burdened_2.mp3'></audio>",*/
             location: {},
             onChapterEnter: [],
@@ -270,8 +269,8 @@ var config = {
             id: 'hacinamientoCritico',
             title: 'Villas Itatí y Azul, hacinamiento crítico',
             image: 'images/6-Hacinamiento.png',
-            description: "Las casi 5.000 familias en Itatí y Azul viven hacinadas, con más de tres personas por habitación, según indican los datos del INDEC de 2010, reforzados por relevamientos realizados por las recientes gestiones de gobierno de la Provincia de Buenos Aires. Las probabilidades de contagio aumentan en espacios hacinados ya que las personas no pueden aislarse de sus familiares que han contraído el virus. En este caso, a falta de testeos y servicios médicos en la zona, aumentaron los contagios.", 
-            source: '<a href="http://datosabiertos.aeroterra.com/datasets/8ecd8e8d4703446781fcf8703473a56b_0?geometry=148.828%2C-59.791%2C83.964%2C-13.392&showData=true">Aeroterra, ESRI</a>', 
+            description: "Son casi 5.000 familias las que viven hacinadas en Itatí y Azul, con más de tres personas por habitación, según indican los datos del INDEC de 2010, reforzados por dos relevamientos en <a href='http://www.estadistica.ec.gba.gov.ar/dpe/images/Informe_Censo_Villa_Itat%C3%AD_-_Villa_Azul_1.pdf'>2018</a> y <a href='http://documents1.worldbank.org/curated/en/778971550482375521/pdf/Evaluaci-n-Social.pdf'>2019</a> realizados por las más recientes gestiones de gobierno de la Provincia de Buenos Aires. Las probabilidades de contagio aumentan en espacios hacinados ya que las personas no pueden aislarse de sus familiares que han contraído el virus. En este caso, a falta de testeos y servicios médicos en la zona aumentaron los contagios.", 
+            source: '<a href="http://datosabiertos.aeroterra.com/datasets/8ecd8e8d4703446781fcf8703473a56b_0?showData=true">Aeroterra, ESRI</a>', 
             location: {
                 center: [-58.311234, -34.707846],
                 zoom: 14.3,
@@ -307,7 +306,7 @@ var config = {
         {//13 Itati y Azul Precariedad
             id: 'picture9',
             title: '<span class="lighter">Villas Itatí y Azul, precariedad extrema</span>',
-            description: "<span class='lighter'>En 2018, el 70% de las viviendas en estos asentamientos fueron catalogadas como inestables y precarias, indicando que en 8 años las condiciones calamitosas de habitabilidad no habían cambiado. Casas de chapa, lona, plástico, etc. conforman la paleta constructiva en esta zona. Los materiales reciclables no son el problema, sino la desidia y la falta de voluntad para reintegrar esta isla urbana en un marco de desarrollo sostenible que provea oportunidades de trabajo y movilidad social a los más vulnerables de la sociedad.</span>",
+            description: "<span class='lighter'>En 2018, el 70% de las viviendas en estos asentamientos fueron catalogadas como inestables y precarias, indicando que en 8 años las condiciones calamitosas de habitabilidad no habían cambiado. Casas de chapa, lona, plástico, cartón, entre otros, conforman la paleta constructiva en esta zona. Los materiales reciclables no son el problema, sino la desidia y la falta de voluntad para reintegrar esta isla urbana en un marco de desarrollo sostenible que provea oportunidades de trabajo y movilidad social a los más vulnerables de la sociedad.</span>",
             location: {},
             onChapterEnter: [],
             onChapterExit: []
@@ -351,7 +350,7 @@ var config = {
         {//15 Itati y Azul sin Agua ni Servicios
             id: 'picture10',
             title: '<span class="lighter">Villas Itatí y Azul, sin agua</span>',
-            description: '<span class="lighter">La falta de agua en Itatí y Azul ha sido clave en la propagación del coronavirus junto con el hacinamiento crítico, las enfermedades crónicas y la falta de acceso a los servicios de sanidad. Todos ellos componen cada uno de los ejes del índice de vulnerabilidad que desprotege a las personas del virus y los convierte en víctimas aseguradas de la pandemia. La Organización Mundial de la Salud indica que los sistemas de higiene y saneamiento son fundamentales para proteger a las personas durante el brote del COVID-19. La práctica continua de medidas de higiene, lavado y desinfección de manos y tratamiento de basura correspondientes en las comunidades logran prevenir en gran medida la transmisión del virus entre personas.</span>',
+            description: '<span class="lighter">La falta de agua en Itatí y Azul ha sido clave en la propagación del coronavirus junto con el hacinamiento crítico, las enfermedades crónicas y la falta de acceso a los servicios de sanidad. Todos ellos componen cada uno de los ejes del índice de vulnerabilidad que desprotege a las personas del virus y los convierte en víctimas aseguradas de la pandemia.<br /><br />La Organización Mundial de la Salud indica que los sistemas de higiene y saneamiento son fundamentales para proteger a las personas durante el brote del COVID-19. La práctica continua de medidas de higiene, lavado y desinfección de manos y tratamiento de basura correspondientes en las comunidades logran prevenir en gran medida la transmisión del virus entre personas.</span>',
             location: {},
             onChapterEnter: [],
             onChapterExit: []

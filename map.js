@@ -226,7 +226,7 @@ map.on("load", function () {
         'paint': {
             'fill-color': ['step', ['get', 'global_covid19_live_update_Confirmed'],
                 '#ffffff',
-                0, '#e5e5e5',
+                0, '#E0E0E0',
                 960, '#EAE2B7',
                 18421, '#FCBF49',
                 66226, '#F77F00',
