@@ -397,18 +397,21 @@ map.on("load", function () {
             'data': 'data/geojson/gba-serv-insuf.geojson'
         },
         'paint': {
-            'fill-color': ['step', ['get', 'ccsb_satis'],
+            'fill-color': ['step', ['get', 'ccsb_insuf'],
                 '#ffffff',
-                0, '#DC2F02',
-                2, '#DC2F02',
-                5, '#DC2F02',
-                10, '#DC2F02',
-                30, '#DC2F02',
-                90, '#FFD465',
-                217, '#FFF9EB',
-                309, '#e5e5e5',
-                456, '#e5e5e5',
-                997, '#e5e5e5'],
+                0, '#e5e5e5',
+                2, '#e5e5e5',
+                5, '#e5e5e5',
+                10, '#FFF9EB',
+                30, '#FFF9EB',
+                90, '#FFF9EB',
+                122, '#FFD465',
+                217, '#FFD465',
+                224, '#DC2F02',
+                309, '#DC2F02',
+                340, '#DC2F02',
+                456, '#DC2F02',
+                997, '#DC2F02'],
             'fill-opacity': 0
         }
     }, 'waterway-shadow');
