@@ -56,7 +56,7 @@ header.appendChild(wrapper);
 // If the content exists, assign it to the 'header' element
 if (config.toptitle) {
     var toptitle = document.createElement('h4');
-    toptitle.innerText = config.toptitle;
+    toptitle.innerHTML = config.toptitle;
     wrapper.appendChild(toptitle);
 }
 if (config.title) {
