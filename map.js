@@ -138,6 +138,9 @@ config.chapters.forEach((record, idx) => {
     }
     // Sets the id for the vignette and adds the step css attribute
     container.setAttribute('id', record.id);
+    if (record.type) {
+        container.setAttribute('class', record.type);
+    }
     container.classList.add('step');
     if (idx === 0) {
         container.classList.add('active');
@@ -184,6 +187,10 @@ const transformRequest = (url) => {
 
 /* This section creates the map element with the
 attributes from the main section of the config.js file */
+
+if (window.innerWidth < 550) {
+    config.chapters[0].location.center = config.chapters[0].location.mobileCenter;
+}
 
 var map = new mapboxgl.Map({
     container: 'map',
@@ -426,10 +433,13 @@ map.on("load", function () {
         .onStepEnter(response => {
             var chapter = config.chapters.find(chap => chap.id === response.element.id);
             response.element.classList.add('active');
-            map.flyTo(chapter.location);
-            if (config.showMarkers) {
-                marker.setLngLat(chapter.location.center);
+            if (window.innerWidth < 550) {
+                chapter.location.center = chapter.location.mobileCenter;
             }
+            map.flyTo(chapter.location);
+            /*if (config.showMarkers) {
+                marker.setLngLat(chapter.location.center);
+            }*/
             if (chapter.onChapterEnter.length > 0) {
                 chapter.onChapterEnter.forEach(setLayerOpacity);
             }

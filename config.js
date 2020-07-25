@@ -2,6 +2,7 @@ var config = {
     accessToken: 'pk.eyJ1IjoiY2FuZGVsYXJpYW1hc3AiLCJhIjoiY2s4OHRpenVuMGNmeDNqbzF1ZmNnN2FwciJ9.e6kBICzbQ_RPjMFy5SgBtw',
     style: 'mapbox://styles/candelariamasp/ckcwhpbke09ex1io49t31cgew',
     theme: 'light',
+    byline: "Revisor: David Smiley",
     alignment: 'left',
     toptitle: "<a href='https://www.linkedin.com/in/candelariamasp/' target='_blank'>Candelaria Mas Pohmajevic</a> | Julio 2020",
     title: 'Pobreza y Pandemia en Latinoamérica: el caso de Buenos Aires',
@@ -13,9 +14,10 @@ var config = {
             id: 'chapter1',
             title: '<span> Latinoamérica, el nuevo epicentro global de COVID-19',
             image: 'images/1-Covid Mundo.png',
-            description: "<span class='notes'> El virus invisible ha matado casi 600.000 personas en el mundo, con epicentros de casos originalmente en China, Italia, España, Reino Unido y Estados Unidos (con más de 135.000 muertes alrededor del área metropolitana de Nueva York). Sin embargo, con la creciente atención de los medios y autoridades enfocada en la situación del Norte global, el Sur global quedó inadvertido hasta que Brasil se estableció como el segundo país con más casos de coronavirus luego de Estados Unidos. Otros países latinoamericanos siguen los mismos pasos.<span class='credit'> Fuente de datos: <a href='https://coronavirus.jhu.edu/map.html' target='_blank'>John Hopkins CSSE</a></span>",
+            description: "El virus invisible ha matado casi 600.000 personas en el mundo, con epicentros de casos originalmente en China, Italia, España, Reino Unido y Estados Unidos (con más de 135.000 muertes alrededor del área metropolitana de Nueva York). Sin embargo, con la creciente atención de los medios y autoridades enfocada en la situación del Norte global, el Sur global quedó inadvertido hasta que Brasil se estableció como el segundo país con más casos de coronavirus luego de Estados Unidos. Otros países latinoamericanos siguen los mismos pasos.<span class='credit'> Fuente de datos: <a href='https://coronavirus.jhu.edu/map.html' target='_blank'>John Hopkins CSSE</a></span>",
             location: {
                 center: [-98, 10],
+                mobileCenter: [-85, 10],
                 zoom: 1.7,
                 pitch: 0,
                 bearing: 0
@@ -30,8 +32,9 @@ var config = {
         },
         {//3 Densidad Urbana
             id: 'picture2',
-            title: "<span class='lighter'>La densidad urbana, un falso culpable</span>",
-            description: "<span class='lighter'>La forma en la que el virus se ha propagado en cada lugar del mundo está directamente relacionada con las características demográficas e inequidades presentes en ellos. Inicialmente en Nueva York se había responsabilizado erróneamente a la densidad (habitantes por metro cuadrado) de la ciudad por la gran cantidad de casos y muertes por coronavirus.<span class='credit'>Crédito de Imagen: <a href='https://ny.curbed.com/2020/6/18/21295554/new-york-city-apartments-home-for-sale-plummet' target='_blank'>Curbed</a></span></span>",
+            type: 'pic',
+            title: "La densidad urbana, un falso culpable",
+            description: "La forma en la que el virus se ha propagado en cada lugar del mundo está directamente relacionada con las características demográficas e inequidades presentes en ellos. Inicialmente en Nueva York se había responsabilizado erróneamente a la densidad (habitantes por metro cuadrado) de la ciudad por la gran cantidad de casos y muertes por coronavirus.<span class='credit'>Crédito de Imagen: <a href='https://ny.curbed.com/2020/6/18/21295554/new-york-city-apartments-home-for-sale-plummet' target='_blank'>Curbed</a></span>",
             /*quote: "<span class='below'>'“I heard it’s the most toxic waterway in all of United States”, highlighted a neighbor.</span>",*/
             location: {},
             onChapterEnter: [],
@@ -39,20 +42,25 @@ var config = {
         },
         {//4 Conectividad y Contagio Areas Metro
             id: 'picture3',
-            title: "<span class='lighter'>La alta conectividad en Áreas Metropolitanas incrementa el contagio</span>",
-            description: "<span class='lighter'>La propagación del virus no depende de un único factor. Culpar exclusivamente a la densidad sería un error grave que apuntaría directamente contra los esfuerzos del desarrollo sostenible a futuro en las ciudades, cita <a href='https://www.tandfonline.com/doi/full/10.1080/01944363.2020.1777891' target='_blank'>un estudio reciente</a>. Las Áreas Metropolitanas de ciudades grandes como Nueva York ofrecen tanto ventajas como desventajas cuando se trata de una pandemia. La alta conectividad de los habitantes a través de los medios de transporte locales e internacionales permite una transmisión del virus más rápida. A mayor conectividad, mayor tasa de infectados.<span class='credit'></a>Crédito de Imagen: <a href='https://www.thestar.com/news/gta/2020/06/18/covid-19-and-transit-what-we-think-we-know-may-be-wrong.html' target='_blank'>The Star</a></span></span>",
-            /*quote: "<span class='below'>'“I heard it’s the most toxic waterway in all of United States”, highlighted a neighbor.</span>",*/
+            type: 'pic',
+            title: "La alta conectividad en Áreas Metropolitanas incrementa el contagio",
+            description: "La propagación del virus no depende de un único factor. Culpar exclusivamente a la densidad sería un error grave que apuntaría directamente contra los esfuerzos del desarrollo sostenible a futuro en las ciudades, cita <a href='https://www.tandfonline.com/doi/full/10.1080/01944363.2020.1777891' target='_blank'>un estudio reciente</a>. Las Áreas Metropolitanas de ciudades grandes como Nueva York ofrecen tanto ventajas como desventajas cuando se trata de una pandemia. La alta conectividad de los habitantes a través de los medios de transporte locales e internacionales permite una transmisión del virus más rápida. A mayor conectividad, mayor tasa de infectados.<span class='credit'></a>Crédito de Imagen: <a href='https://www.thestar.com/news/gta/2020/06/18/covid-19-and-transit-what-we-think-we-know-may-be-wrong.html' target='_blank'>The Star</a></span>",
             location: {},
             onChapterEnter: [],
             onChapterExit: []
         },
         {//5 Mejor Información y Servicios en Áreas Metropolitanas
             id: 'picture4',
-            title: '<span class="lighter">Las Áreas Metropolitanas están mejor preparadas para contener el virus</span>',
-            description: "<span class='lighter'>Por otro lado, las Áreas Metropolitanas están mejor preparadas para contener una situación de esta envergadura creando medidas ágiles y efectivas que puedan frenar el contagio entre sus habitantes. Además los servicios de salud, infraestructura y profesionales concentrados en estas áreas ofrecen mejores servicios a la comunidad en una pandemia.<span class='credit'>Crédito de Imagen: <a href='http://observatorioamba.org/noticias-y-agenda/noticia/coronavirus-en-la-argentina-como-cambiaran-las-ciudades-con-el-distanciamiento-social' target='_blank'>El Observatorio Metropolitano</a></span></span></span>",
-            /*audio: "<audio controls preload='none'><source src='audio/interview_sewage_dvlp_problem_1.mp3'></audio>",*/
+            type: 'pic',
+            title: 'Las Áreas Metropolitanas están mejor preparadas para contener el virus',
+            description: "Por otro lado, las Áreas Metropolitanas están mejor preparadas para contener una situación de esta envergadura creando medidas ágiles y efectivas que puedan frenar el contagio entre sus habitantes. Además los servicios de salud, infraestructura y profesionales concentrados en estas áreas ofrecen mejores servicios a la comunidad en una pandemia.<span class='credit'>Crédito de Imagen: <a href='http://observatorioamba.org/noticias-y-agenda/noticia/coronavirus-en-la-argentina-como-cambiaran-las-ciudades-con-el-distanciamiento-social' target='_blank'>El Observatorio Metropolitano</a></span>",
             location: {},
-            onChapterEnter: [],
+            onChapterEnter: [
+                {
+                    layer: 'argCovid',
+                    opacity: 0
+                }
+            ],
             onChapterExit: []
         },
 
@@ -64,6 +72,7 @@ var config = {
             source: '<a href="https://www.lanacion.com.ar/sociedad/provincia-provincia-mapa-del-coronavirus-argentina-nid2344407" target="_blank">Diario La Nación</a>',
             location: {
                 center: [-78.560250, -40.096309],
+                mobileCenter: [-67.560250, -40.096309],
                 zoom: 3.5,
                 //pitch: 40,
                 //bearing: 45
@@ -106,10 +115,6 @@ var config = {
                 {
                     layer: 'villasMiseriaPerimetros',
                     opacity: 0 
-                },
-                {
-                    layer: 'argCovid',
-                    opacity: 0
                 }
             ]
         },
@@ -122,6 +127,7 @@ var config = {
             source: '<a href="http://datosabiertos.aeroterra.com/datasets/8ecd8e8d4703446781fcf8703473a56b_0?geometry=148.828%2C-59.791%2C83.964%2C-13.392&showData=true" target="_blank">Aeroterra, ESRI</a>',
             location: {
                 center: [-58.695696, -34.619016],
+                mobileCenter: [-58.5, -34.619016],
                 zoom: 9.8,
                 //pitch: 40,
                 //bearing: 45
@@ -146,26 +152,31 @@ var config = {
                 {
                     layer: 'villasMiseriaPeriBold',
                     opacity: 0
-                }
-            ],
-            onChapterExit: [
-                {
-                    layer: 'villasMiseriaPerimetros',
-                    opacity: 0
                 },
                 {
-                    layer: 'ponderacion',
+                    layer: 'argCovid',
                     opacity: 0
                 }
-            ]
+            ],
+            onChapterExit: []
         },
 
         {//8 Condiciones Precarias
             id: 'picture6',
-            title: '<span class="lighter">Pobreza y precarias condiciones de habitabilidad</span>',
-            description: "<span class='lighter'>LLas comunidades más pobres han sido las más afectadas alrededor del mundo. En Buenos Aires, los habitantes de asentamientos informales padecen en mayor medida afecciones como <a href='https://blogs.iadb.org/ideas-matter/en/poor-health-poverty-and-the-challenges-of-covid-19-in-latin-america-and-the-caribbean/' target='_blank'>diabetes, obesidad, hipertensión y malnutrición</a>, convirtiéndolos en grupo de riesgo de contraer el coronavirus. Además, la precariedad de las viviendas y barrios que habitan los residentes de estos asentamientos informales ha sido un factor central en el contagio del COVID-19.<span class='credit'>Crédito de Imagen: <a href='https://www.lanacion.com.ar/sociedad/coronavirus-argentina-temor-vecinos-villa-itati-casos-nid2370454' target='_blank'>Diario La Nación</a></span>",
+            type: 'pic',
+            title: 'Pobreza y precarias condiciones de habitabilidad',
+            description: "Las comunidades más pobres han sido las más afectadas alrededor del mundo. En Buenos Aires, los habitantes de asentamientos informales padecen en mayor medida afecciones como <a href='https://blogs.iadb.org/ideas-matter/en/poor-health-poverty-and-the-challenges-of-covid-19-in-latin-america-and-the-caribbean/' target='_blank'>diabetes, obesidad, hipertensión y malnutrición</a>, convirtiéndolos en grupo de riesgo de contraer el coronavirus. Además, la precariedad de las viviendas y barrios que habitan los residentes de estos asentamientos informales ha sido un factor central en el contagio del COVID-19.<span class='credit'>Crédito de Imagen: <a href='https://www.lanacion.com.ar/sociedad/coronavirus-argentina-temor-vecinos-villa-itati-casos-nid2370454' target='_blank'>Diario La Nación</a></span>",
             location: {},
-            onChapterEnter: [],
+            onChapterEnter: [
+                {
+                    layer: 'ambaCovid',
+                    opacity: 0
+                },
+                {
+                    layer: 'villasMiseria',
+                    opacity: 0
+                }
+            ],
             onChapterExit: []
         },
 
@@ -177,6 +188,7 @@ var config = {
             source: '<a href="https://www.lanacion.com.ar/sociedad/municipio-municipio-mapa-del-coronavirus-provincia-buenos-nid2358970" target="_blank">Diario La Nación</a>',
             location: {
                 center: [-58.695696, -34.619016],
+                mobileCenter: [-58.5, -34.619016],
                 zoom: 9.8,
                 //pitch: 40,
                 //bearing: 45
@@ -201,18 +213,13 @@ var config = {
                 {
                     layer: 'villasMiseriaPerimetros',
                     opacity: 0
-                }
-            ],
-            onChapterExit: [
-                {
-                    layer: 'ambaCovid',
-                    opacity: 0
                 },
                 {
-                    layer: 'villasMiseria',
+                    layer: 'villasMiseriaName',
                     opacity: 0
                 }
-            ]
+            ],
+            onChapterExit: []
                 
         },
 
@@ -224,6 +231,7 @@ var config = {
             source: '<a href="http://datosabiertos.aeroterra.com/datasets/8ecd8e8d4703446781fcf8703473a56b_0?geometry=148.828%2C-59.791%2C83.964%2C-13.392&showData=true" target="_blank">Aeroterra, ESRI</a>', 
             location: {
                 center: [-58.311234, -34.707846],
+                mobileCenter: [-58.304797, -34.703829],
                 zoom: 14.3,
                 //pitch: 40,
                 //bearing: 45
@@ -240,27 +248,32 @@ var config = {
                 {
                     layer: 'ponderacion',
                     opacity: .75
+                },
+                {
+                    layer: 'ambaCovid',
+                    opacity: 0
+                },
+                {
+                    layer: 'villasMiseria',
+                    opacity: 0
                 }
             ],
-            onChapterExit: [
-                {
-                    layer: 'villasMiseriaName',
-                    opacity: 0
-                },
-                {
-                    layer: 'villasMiseriaPeriBold',
-                    opacity: 0
-                },
-            ]
+            onChapterExit: []
         },
 
         {//11 Aislacion impuesta
             id: 'picture8',
-            title: '<span class="lighter">Villas miseria, aislación impuesta</span>',
-            description: '<span class="lighter">En un atropello a las libertades individuales y colectivas, sumado a las deudas sostenidas con las villas miseria, las autoridades locales, regionales y nacionales decidieron acordonar las Villas Itatí y Azul del resto de la ciudad, enfatizando todavía más su evidente segregación urbana y social. Por medio de una aislación obligatoria reforzada por la policía, ambos asentamientos fueron "desconectados" de su entorno por 14 días suscitando una reacción crítica por parte de los mismos habitantes y organizaciones de derechos humanos que reclamaron que dichas medidas empeorarían la innegable situación de aislamiento socio-económico, espacial y de salud ya existentes en las villas miseria. El gobernador de la Provincia de Buenos Aires Kiciloff retrucó diciendo que hubiera tomado la misma medida extremista de aislamiento en caso de tratarse de un pico de casos en un barrio privado. Preocupa la soltura con la que aboga por disminuir las libertades de los habitantes que representa y su falta de coherencia al creer que fuera posible un pico de casos de COVID-19 en un afluente barrio privado donde los recursos, el espacio y la información abundan en calidad y cantidad para evitar los contagios.</span>',
+            type: 'pic',
+            title: 'Villas miseria, aislación impuesta',
+            description: 'En un atropello a las libertades individuales y colectivas, sumado a las deudas sostenidas con las villas miseria, las autoridades locales, regionales y nacionales decidieron acordonar las Villas Itatí y Azul del resto de la ciudad, enfatizando todavía más su evidente segregación urbana y social. Por medio de una aislación obligatoria reforzada por la policía, ambos asentamientos fueron "desconectados" de su entorno por 14 días suscitando una reacción crítica por parte de los mismos habitantes y organizaciones de derechos humanos que reclamaron que dichas medidas empeorarían la innegable situación de aislamiento socio-económico, espacial y de salud ya existentes en las villas miseria. El gobernador de la Provincia de Buenos Aires Kiciloff retrucó diciendo que hubiera tomado la misma medida extremista de aislamiento en caso de tratarse de un pico de casos en un barrio privado. Preocupa la soltura con la que aboga por disminuir las libertades de los habitantes que representa y su falta de coherencia al creer que fuera posible un pico de casos de COVID-19 en un afluente barrio privado donde los recursos, el espacio y la información abundan en calidad y cantidad para evitar los contagios.',
             /*audio: "<audio controls preload='none'><source src='audio/interview_gentrification_infrast_burdened_2.mp3'></audio>",*/
             location: {},
-            onChapterEnter: [],
+            onChapterEnter: [
+                {
+                    layer: 'hacinamientoCritico',
+                    opacity: 0
+                },
+            ],
             onChapterExit: []
         },
 
@@ -273,6 +286,7 @@ var config = {
             source: '<a href="http://datosabiertos.aeroterra.com/datasets/8ecd8e8d4703446781fcf8703473a56b_0?showData=true" target="_blank">Aeroterra, ESRI</a>', 
             location: {
                 center: [-58.311234, -34.707846],
+                mobileCenter: [-58.304797, -34.703829],
                 zoom: 14.3,
                 //pitch: 40,
                 //bearing: 45
@@ -295,20 +309,19 @@ var config = {
                     opacity: 1
                 },
             ],
-            onChapterExit: [
-                {
-                    layer: 'hacinamientoCritico',
-                    opacity: 0
-                }
-            ]
+            onChapterExit: []
         },
 
         {//13 Itati y Azul Precariedad
             id: 'picture9',
-            title: '<span class="lighter">Villas Itatí y Azul, precariedad extrema</span>',
-            description: "<span class='lighter'>En 2018, el 70% de las viviendas en estos asentamientos fueron catalogadas como inestables y precarias, indicando que en 8 años las condiciones calamitosas de habitabilidad no habían cambiado. Casas de chapa, lona, plástico, cartón, entre otros, conforman la paleta constructiva en esta zona. Los materiales reciclables no son el problema, sino la desidia y la falta de voluntad para reintegrar esta isla urbana en un marco de desarrollo sostenible que provea oportunidades de trabajo y movilidad social a los más vulnerables de la sociedad.</span>",
+            type: 'pic',
+            title: 'Villas Itatí y Azul, precariedad extrema',
+            description: "En 2018, el 70% de las viviendas en estos asentamientos fueron catalogadas como inestables y precarias, indicando que en 8 años las condiciones calamitosas de habitabilidad no habían cambiado. Casas de chapa, lona, plástico, cartón, entre otros, conforman la paleta constructiva en esta zona. Los materiales reciclables no son el problema, sino la desidia y la falta de voluntad para reintegrar esta isla urbana en un marco de desarrollo sostenible que provea oportunidades de trabajo y movilidad social a los más vulnerables de la sociedad.",
             location: {},
-            onChapterEnter: [],
+            onChapterEnter: [{
+                layer: 'servInsuf',
+                opacity: 0
+            }],
             onChapterExit: []
         },
 
@@ -320,6 +333,7 @@ var config = {
             source: '<a href="http://datosabiertos.aeroterra.com/datasets/8ecd8e8d4703446781fcf8703473a56b_0?geometry=148.828%2C-59.791%2C83.964%2C-13.392&showData=true" target="_blank">Aeroterra, ESRI</a>', 
             location: {
                 center: [-58.311234, -34.707846],
+                mobileCenter: [-58.304797, -34.703829],
                 zoom: 14.3,
                 //pitch: 40,
                 //bearing: 45
@@ -337,28 +351,32 @@ var config = {
                     layer: 'servInsuf',
                     opacity: 1
                 },
-            ],
-            onChapterExit: [
                 {
-                    layer: 'servInsuf',
+                    layer: 'hacinamientoCritico',
                     opacity: 0
                 }
-            ]
+            ],
+            onChapterExit: []
         },
 
         {//15 Itati y Azul sin Agua ni Servicios
             id: 'picture10',
-            title: '<span class="lighter">Villas Itatí y Azul, sin agua</span>',
-            description: '<span class="lighter">La falta de agua en Itatí y Azul ha sido clave en la propagación del coronavirus junto con el hacinamiento crítico, las enfermedades crónicas y la falta de acceso a los servicios de sanidad. Todos ellos componen cada uno de los ejes del índice de vulnerabilidad que desprotege a las personas del virus y los convierte en víctimas aseguradas de la pandemia.<br /><br />La Organización Mundial de la Salud indica que los sistemas de higiene y saneamiento son fundamentales para proteger a las personas durante el brote del COVID-19. La práctica continua de medidas de higiene, lavado y desinfección de manos y tratamiento de basura correspondientes en las comunidades logran prevenir en gran medida la transmisión del virus entre personas.</span>',
+            type: 'pic',
+            title: 'Villas Itatí y Azul, sin agua',
+            description: 'La falta de agua en Itatí y Azul ha sido clave en la propagación del coronavirus junto con el hacinamiento crítico, las enfermedades crónicas y la falta de acceso a los servicios de sanidad. Todos ellos componen cada uno de los ejes del índice de vulnerabilidad que desprotege a las personas del virus y los convierte en víctimas aseguradas de la pandemia.<br /><br />La Organización Mundial de la Salud indica que los sistemas de higiene y saneamiento son fundamentales para proteger a las personas durante el brote del COVID-19. La práctica continua de medidas de higiene, lavado y desinfección de manos y tratamiento de basura correspondientes en las comunidades logran prevenir en gran medida la transmisión del virus entre personas.',
             location: {},
-            onChapterEnter: [],
+            onChapterEnter: [{
+                layer: 'servInsuf',
+                opacity: 0
+            }],
             onChapterExit: []
         },
 
         {//16 Futuro sostenible y equitativo
             id: 'picture7',
-            title: '<span class="lighter">¿Un futuro equitativo, sostenible y con mayor oportunidades?</span>',
-            description: '<span class="lighter">El manejo improvisado de los gobernantes y la decisión extremista de aislar comunidades por el brote de COVID-19 ha dejado expuesta la corrupción y falta de planificación sostenible en los países latinoamericanos, exacerbando la pobreza e insalubridad de los grupos más vulnerables de la población causando efectos adversos e irreversibles en la economía y acechando la salud pública de las ciudades. La implementación de la <a href="https://www.onu.org.ar/agenda-post-2015/" target="_blank">Agenda de Desarrollo Sostenible</a> es más necesaria que nunca y debe hacerse posible con participación de todas las comunidades. Además de viviendas y servicios dignos, las familias que habitan asentamientos precarios como Villa Itatí y Azul deben poder tener una voz y participación en el proceso de reconstrucción a corto y largo plazo, así proveyendo de oportunidades de trabajo a los residentes y no exclusivamente de espacios para habitar. El espacio público, muchas veces ausente en los barrios populares, se debe considerar como intrínseco y central en la generación de ciudad equitativa y resiliente para todos.<span class="credit">Crédito de Imagen: <a href="https://earth.google.com/web/@-34.70971363,-58.30417164,8.08277571a,5194.29804593d,35y,-0h,0t,0r" target="_blank">Google Earth</a></span>',
+            type: 'pic',
+            title: '¿Un futuro equitativo, sostenible y con mayor oportunidades?',
+            description: 'El manejo improvisado de los gobernantes y la decisión extremista de aislar comunidades por el brote de COVID-19 ha dejado expuesta la corrupción y falta de planificación sostenible en los países latinoamericanos, exacerbando la pobreza e insalubridad de los grupos más vulnerables de la población causando efectos adversos e irreversibles en la economía y acechando la salud pública de las ciudades. La implementación de la <a href="https://www.onu.org.ar/agenda-post-2015/" target="_blank">Agenda de Desarrollo Sostenible</a> es más necesaria que nunca y debe hacerse posible con participación de todas las comunidades. Además de viviendas y servicios dignos, las familias que habitan asentamientos precarios como Villa Itatí y Azul deben poder tener una voz y participación en el proceso de reconstrucción a corto y largo plazo, así proveyendo de oportunidades de trabajo a los residentes y no exclusivamente de espacios para habitar. El espacio público, muchas veces ausente en los barrios populares, se debe considerar como intrínseco y central en la generación de ciudad equitativa y resiliente para todos.<span class="credit">Crédito de Imagen: <a href="https://earth.google.com/web/@-34.70971363,-58.30417164,8.08277571a,5194.29804593d,35y,-0h,0t,0r" target="_blank">Google Earth</a>',
             location: {},
             onChapterEnter: [],
             onChapterExit: []
