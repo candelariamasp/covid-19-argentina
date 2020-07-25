@@ -119,7 +119,7 @@ a, a:hover, a:visited {
 }
 
 .step {
-  margin-bottom: 50vh;
+  padding-bottom: 50vh;
   opacity: 0.25;
 }
 .step.active {
@@ -210,11 +210,11 @@ div.light {
 
   .step {
     width: 95vw;
-    margin-bottom: 100vh;
+    padding-bottom: 100vh;
   }
 
   .step.pic {
-    margin-bottom: 50vh;
+    padding-bottom: 50vh;
   }
 
   .pic div.light h3, .pic div.light p {
