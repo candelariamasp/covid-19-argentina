@@ -97,6 +97,10 @@ var config = {
                 {
                     layer: 'ambaCovid',
                     opacity: 0
+                },
+                {
+                    layer: 'ponderacion',
+                    opacity: 0
                 }
             ],
             onChapterExit: [

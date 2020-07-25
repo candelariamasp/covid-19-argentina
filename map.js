@@ -65,7 +65,7 @@ if (config.title) {
     wrapper.appendChild(titleText);
 }
 if (config.byline) {
-    var bylineText = document.createElement('p');
+    var bylineText = document.createElement('h4');
     bylineText.classList.add("byline");
     bylineText.innerText = config.byline;
     wrapper.appendChild(bylineText);

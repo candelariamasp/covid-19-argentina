@@ -18,7 +18,7 @@ body {
 
 #header {
   margin: auto;
-  padding: 8vh 2vh 8vh 2vh;
+  padding: 4vh 2vh 8vh 2vh;
 }
   
   #header h1 {
@@ -42,7 +42,7 @@ body {
       margin: 1em auto 1em auto;
   }
   
-    #header p.byline {
+    #header h4.byline {
       font-weight: 300;
       font-size: 1em;
     }
