@@ -14,12 +14,12 @@ body {
 #header #wrapper {
   width: 50vw;
   margin: auto;
-  z-index: 100;
 }
 
 #header {
   margin: auto;
   padding: 4vh 2vh 8vh 2vh;
+  z-index: 100;
 }
   
   #header h1 {
