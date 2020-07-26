@@ -9,6 +9,26 @@ var config = {
     byline: '',
     footer: 'Esta historia se basa en datos de <a https://recursos-gis-covid-19-aeroterra.hub.arcgis.com/pages/datos-abiertos">Aeroterra</a>, Mapas de Vulnerabilidad del <http://datosabiertos.aeroterra.com/datasets/8ecd8e8d4703446781fcf8703473a56b_0?showData=true">Censo de 2010 del INDEC</a> y datos de casos de COVID-19 <a href="https://www.lanacion.com.ar/sociedad/provincia-provincia-mapa-del-coronavirus-argentina-nid2344407" target="_blank">en Argentina</a> y <a href="https://www.lanacion.com.ar/sociedad/municipio-municipio-mapa-del-coronavirus-provincia-buenos-nid2358970">en la Provincia de Buenos Aires</a> por Diario La Nación.</a>',
     chapters: [
+        {//3 Densidad Urbana
+            id: 'intro',
+            title: "Pobreza y Pandemia en Latinoamérica: El caso de Buenos Aires",
+            description: "Al inicio de la pandemia del coronavirus, algunos presidentes latinoamericanos lo llamaron despectivamente \"el virus de los ricos.\" Sin embargo, el COVID-19 no distingue sexo, religión o nacionalidad, y se propaga a tasas letales en comunidades donde el acceso a condiciones de vida y sanidad dignas no existen. Es por ello que en Latinoamérica los casos de contagios han \"explotado\" en los asentamientos informales como villas miseria o favelas donde el hacinamiento y la carencia de espacios públicos son moneda corriente. <br /><br />La Latinoamérica post-pandemia debe enfocarse en desarrollar ciudades resilientes soportadas por estructuras de comunidad partícipes de la creación y evolución del espacio que habitan, el modelo de gobernanza usual \"desde arriba\" es obsoleto y pone en riesgo a toda la población.",
+            quote: "<span class='below'>'“I heard it’s the most toxic waterway in all of United States”, highlighted a neighbor.</span>",
+            location: {
+                center: [-98, 10],
+                mobileCenter: [-85, 10],
+                zoom: 1.7,
+                pitch: 0,
+                bearing: 0
+            },
+            onChapterEnter: [
+                {
+                    layer: 'worldCovid',
+                    opacity: 1
+                }
+            ],
+            onChapterExit: []
+        },
         {//2 Latinoamérica epicentro 
             id: 'chapter1',
             title: 'Latinoamérica, el nuevo epicentro global de COVID-19',
