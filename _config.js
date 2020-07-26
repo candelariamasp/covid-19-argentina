@@ -63,7 +63,6 @@ var config = {
             ],
             onChapterExit: []
         },
-
         {//6 zoom 1 - BACasos
             id: 'BACasos',
             title: 'Buenos Aires: el foco del COVID-19 en Argentina',

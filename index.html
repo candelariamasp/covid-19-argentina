@@ -260,6 +260,16 @@ map.on("load", function() {
         }
     });
 
+    // This is the function that finds the first symbol layer
+    var layers = map.getStyle().layers;
+    var firstSymbolId;
+    for (var i = 0; i < layers.length; i++) {
+        if (layers[i].type === 'symbol') {
+            firstSymbolId = layers[i].id;
+            break;
+        }
+    }
+
     //Add the World COVID-19 07/07/2020
     map.addLayer({
         'id': 'worldCovid',
@@ -281,6 +291,186 @@ map.on("load", function() {
                 2948397, '#003049',
             ],
         'fill-opacity': 0
+        }
+    }, 'waterway-shadow');
+
+    //Add the Agentina COVID-19 10/07/2020
+    map.addLayer({
+        'id': 'argCovid',
+        'type': 'fill',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/arg-prov-covid-19.geojson'
+        },
+        'paint': {
+            'fill-color': ['step', ['get','arg-casos-covid-19_casos-covid-19-10072020'],
+                '#ffffff',
+                0,'#FFE8AD',
+                89, '#FFCB45',
+                263, '#FFC632',
+                485, '#FAA307',
+                854, '#F48C06',
+                2446, '#E85D04',
+                95182, '#D62828',],
+            'fill-opacity': 0
+        }
+    }, 'waterway-shadow');
+
+    //Add the AMBA covid cases 
+    map.addLayer({
+        'id': 'ambaCovid',
+        'type': 'fill',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/amba-covid-19-10072020.geojson'
+        },
+        'paint': {
+            'fill-color': ['step', ['get','casos-covid-19'],
+                '#f7f7f7',
+                54, '#FFF3D6', 
+                66, '#FFF3D6', 
+                75, '#FFF3D6', 
+                100,'#FFF3D6', 
+                157,'#FFF3D6', 
+                184,'#FFF3D6', 
+                345, '#FFF3D6', 
+                410, '#FFF3D6', 
+                549,'#FFE8AD',
+                1339, '#FAA307',
+                2228, '#DC2F02',
+                4454, '#D61801',
+                7293, '#D00000',],
+            'fill-opacity': 0
+        }
+    }, 'waterway-shadow');
+
+    //Add the Villas Miseria Layer
+    map.addLayer({
+        'id': 'villasMiseria',
+        'type': 'fill',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/villas-miseria.geojson'
+        },
+        'paint': {
+          'fill-color': '#000000',
+          'fill-opacity': 0
+        }
+    }, firstSymbolId);
+
+    //Add the Villas Miseria Perimetros
+    map.addLayer({
+        'id': 'villasMiseriaPerimetros',
+        'type': 'line',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/villas-miseria.geojson'
+        },
+        'paint': {
+          'line-color': '#D62828',
+          'line-width': 0.8
+        }
+    }, firstSymbolId);
+
+     //Add the Villas Miseria Perimetros bolder
+     map.addLayer({
+        'id': 'villasMiseriaPeriBold',
+        'type': 'line',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/villas-miseria.geojson'
+        },
+        'paint': {
+          'line-color': '#D62828',
+          'line-width': 3
+        }
+    }, firstSymbolId);
+
+    // Add the labels layer
+    map.addLayer({
+        'id': 'villasMiseriaName',
+        'type': 'symbol',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/villas-miseria.geojson'
+        },
+        'layout': {
+            'text-field': ['get', 'Listado Nacional de Barrios 2018_Nombre Barrio 2'],
+            'text-allow-overlap': true,
+            'text-offset': [0, 0.8],
+            'text-anchor': 'center',
+            'text-size': 15
+        },
+        'paint': {
+            'text-color': "#000"
+        }
+    }, firstSymbolId);
+    
+    // Add the Ponderación map 
+    map.addLayer({
+        'id': 'ponderacion',
+        'type': 'fill',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/gba_caba_ponderacion.geojson'
+        },
+        'paint': {
+            'fill-color': ['step', ['get', 'Ponderacio'],
+                '#ffffff',
+                0.03, '#f7f7f7',
+                0.1161, '#cccccc',
+                0.1381, '#969696',
+                0.1611, '#636363',
+                0.1981, '#252525'],
+            'fill-opacity': 0
+        }
+    }, 'waterway-shadow');
+
+    // Add the Hacinamiento map 
+    map.addLayer({
+        'id': 'hacinamientoCritico',
+        'type': 'fill',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/gba_caba_hacinamiento_critico.geojson'
+        },
+        'paint': {
+            'fill-color': ['step', ['get', 'porc_hog_1'],
+                '#ffffff',
+                0, '#e5e5e5',
+                0.03, '#eae2b7',
+                0.07, '#fcbf49',
+                0.13, '#dc2f02',
+                0.31, '#dc2f02'],
+            'fill-opacity': 0
+        }
+    }, 'waterway-shadow');
+
+     // Add the falta de baños map 
+     map.addLayer({
+        'id': 'servInsuf',
+        'type': 'fill',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/gba-serv-insuf.geojson'
+        },
+        'paint': {
+            'fill-color': ['step', ['get', 'ccsb_insuf'],
+                '#ffffff',
+                0, '#e5e5e5',
+                2, '#e5e5e5',
+                5, '#e5e5e5',
+                10, '#FFF9EB',
+                30, '#FFF9EB',
+                90, '#FFF9EB',
+                122, '#FFD465',
+                217, '#FFD465',
+                224, '#DC2F02',
+                309, '#DC2F02',
+                340, '#DC2F02',
+                456, '#DC2F02',
+                997, '#DC2F02'],
+            'fill-opacity': 0
         }
     }, 'waterway-shadow');
 });
