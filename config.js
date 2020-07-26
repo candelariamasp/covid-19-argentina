@@ -105,10 +105,10 @@ var config = {
                     layer: 'villasMiseria',
                     opacity: 0
                 },
-                /*{
+                {
                     layer: 'villasMiseriaName',
                     opacity: 0
-                },
+                },/*
                 {
                     layer: 'ambaCovid',
                     opacity: 0
@@ -122,15 +122,16 @@ var config = {
                 {
                     layer: 'villasMiseria',
                     opacity: 0
+                },
+                {
+                    layer: 'villasMiseriaName',
+                    opacity: 0
                 },/*
                 {
                     layer: 'ponderacion',
                     opacity: 0
                 },
-                {
-                    layer: 'villasMiseriaName',
-                    opacity: 0
-                },*/
+                */
                 {
                     layer: 'villasMiseriaPerimetros',
                     opacity: 0 
@@ -223,6 +224,10 @@ var config = {
                 {
                     layer: 'villasMiseriaPeriBold',
                     opacity: 0
+                },
+                {
+                    layer: 'villasMiseriaName',
+                    opacity: 0
                 }/*,
                 {
                     layer: 'ambaCovid',
@@ -230,11 +235,6 @@ var config = {
                 },
                 {
                     layer: 'ponderacion',
-                    opacity: 0
-                },
-                
-                {
-                    layer: 'villasMiseriaName',
                     opacity: 0
                 }*/
             ],
@@ -261,11 +261,11 @@ var config = {
                 {
                     layer: 'villasMiseria',
                     opacity: 0
-                }/*
+                },
                 {
                     layer: 'villasMiseriaName',
                     opacity: 1
-                },
+                },/*
                 {
                     layer: 'ponderacion',
                     opacity: .75
@@ -309,11 +309,11 @@ var config = {
                 {
                     layer: 'villasMiseriaPeriBold',
                     opacity: 1
-                },/*
+                },
                 {
                     layer: 'villasMiseriaName',
                     opacity: 1
-                },
+                },/*
                 {
                     layer: 'ponderacion',
                     opacity: 0
@@ -325,17 +325,19 @@ var config = {
             ],
             onChapterExit: []
         },
-/*
+
         {//13 Itati y Azul Precariedad
             id: 'picture9',
             type: 'pic',
             title: 'Villas Itatí y Azul, precariedad extrema',
             description: "En 2018, el 70% de las viviendas en estos asentamientos fueron catalogadas como inestables y precarias, indicando que en 8 años las condiciones calamitosas de habitabilidad no habían cambiado. Casas de chapa, lona, plástico, cartón, entre otros, conforman la paleta constructiva en esta zona. Los materiales reciclables no son el problema, sino la desidia y la falta de voluntad para reintegrar esta isla urbana en un marco de desarrollo sostenible que provea oportunidades de trabajo y movilidad social a los más vulnerables de la sociedad.",
             location: {},
-            onChapterEnter: [{
-                layer: 'servInsuf',
-                opacity: 0
-            }],
+            onChapterEnter: [
+                /*{
+                    layer: 'servInsuf',
+                    opacity: 0
+                }*/
+            ],
             onChapterExit: []
         },
 
@@ -356,7 +358,7 @@ var config = {
                 {
                     layer: 'villasMiseriaName',
                     opacity: 1
-                },
+                },/*
                 {
                     layer: 'ponderacion',
                     opacity: 0
@@ -368,7 +370,7 @@ var config = {
                 {
                     layer: 'hacinamientoCritico',
                     opacity: 0
-                }
+                }*/
             ],
             onChapterExit: []
         },
@@ -394,6 +396,6 @@ var config = {
             location: {},
             onChapterEnter: [],
             onChapterExit: []
-        }*/
+        }
     ]
 };
