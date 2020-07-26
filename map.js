@@ -243,7 +243,7 @@ map.on("load", function () {
                 2948397, '#003049',],
             'fill-opacity': 0
         }
-    }, 'waterway-shadow');
+    }, 'waterway-shadow');/*
 
      //Add the Agentina COVID-19 10/07/2020
      map.addLayer({
@@ -453,7 +453,7 @@ map.on("load", function () {
             if (chapter.onChapterExit.length > 0) {
                 chapter.onChapterExit.forEach(setLayerOpacity);
             }
-        });
+        });*/
 });
 
 /* Here we watch for any resizing of the screen to
