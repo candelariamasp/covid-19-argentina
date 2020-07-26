@@ -206,8 +206,6 @@ var map = new mapboxgl.Map({
 // Instantiates the scrollama function
 var scroller = scrollama();
 
-map.scrollZoom.disable();
-
 /* Here we add the two extra layers we are using, just like in our previous
 tutorial. At the end, however, we setup the functions that will tie the
 scrolling to the chapters and move the map from one location to another
@@ -225,7 +223,7 @@ map.on("load", function () {
     }
 
     //Add the World COVID-19 07/07/2020
-   /* map.addLayer({
+    map.addLayer({
         'id': 'worldCovid',
         'type': 'fill',
         'source': {
@@ -453,7 +451,7 @@ map.on("load", function () {
             if (chapter.onChapterExit.length > 0) {
                 chapter.onChapterExit.forEach(setLayerOpacity);
             }
-        });*/
+        });
 });
 
 /* Here we watch for any resizing of the screen to
