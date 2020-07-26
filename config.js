@@ -101,12 +101,12 @@ var config = {
                     layer: 'argCovid',
                     opacity: 1
                 },
-                /*{
-                    layer: 'villasMiseriaName',
-                    opacity: 0
-                },
                 {
                     layer: 'villasMiseria',
+                    opacity: 0
+                },
+                /*{
+                    layer: 'villasMiseriaName',
                     opacity: 0
                 },
                 {
@@ -119,10 +119,10 @@ var config = {
                 }*/
             ],
             onChapterExit: [
-                /*{
+                {
                     layer: 'villasMiseria',
                     opacity: 0
-                },
+                },/*
                 {
                     layer: 'ponderacion',
                     opacity: 0
@@ -136,7 +136,7 @@ var config = {
                     opacity: 0 
                 }*/
             ]
-        },/*
+        },
         {//7 BAVillas
             id: 'BAVillas',
             title: 'Barrios populares, alta vulnerabilidad ',
@@ -156,6 +156,11 @@ var config = {
                     opacity: 0
                 },
                 {
+                    layer: 'argCovid',
+                    opacity: 0
+                }
+                /*
+                {
                     layer: 'ambaCovid',
                     opacity: 0
                 },
@@ -170,11 +175,7 @@ var config = {
                 {
                     layer: 'villasMiseriaPeriBold',
                     opacity: 0
-                },
-                {
-                    layer: 'argCovid',
-                    opacity: 0
-                }
+                }*/
             ],
             onChapterExit: []
         },
@@ -185,10 +186,10 @@ var config = {
             description: "Las comunidades más pobres han sido las más afectadas alrededor del mundo. En Buenos Aires, los habitantes de asentamientos informales padecen en mayor medida afecciones como <a href='https://blogs.iadb.org/ideas-matter/en/poor-health-poverty-and-the-challenges-of-covid-19-in-latin-america-and-the-caribbean/' target='_blank'>diabetes, obesidad, hipertensión y malnutrición</a>, convirtiéndolos en grupo de riesgo de contraer el coronavirus. Además, la precariedad de las viviendas y barrios que habitan los residentes de estos asentamientos informales ha sido un factor central en el contagio del COVID-19.<span class='credit'>Crédito de Imagen: <a href='https://www.lanacion.com.ar/sociedad/coronavirus-argentina-temor-vecinos-villa-itati-casos-nid2370454' target='_blank'>Diario La Nación</a></span>",
             location: {},
             onChapterEnter: [
-                {
+                /*{
                     layer: 'ambaCovid',
                     opacity: 0
-                },
+                },*/
                 {
                     layer: 'villasMiseria',
                     opacity: 0
@@ -214,7 +215,7 @@ var config = {
                 {
                     layer: 'villasMiseria',
                     opacity: 1
-                },
+                },/*
                 {
                     layer: 'ambaCovid',
                     opacity: 1
@@ -234,11 +235,10 @@ var config = {
                 {
                     layer: 'villasMiseriaName',
                     opacity: 0
-                }
+                }*/
             ],
             onChapterExit: []
-                
-        },
+        },/*
         {//10 El Caso de Itati y Azul
             id: 'ItatiAzulPobreza',
             title: 'Villas Itatí y Azul, vulnerabilidad extrema y foco del COVID-19',

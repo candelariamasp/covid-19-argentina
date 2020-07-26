@@ -292,7 +292,7 @@ map.on("load", function() {
             ],
         'fill-opacity': 0
         }
-    }, 'waterway-shadow');
+    }, firstSymbolId);
 
     //Add the Agentina COVID-19 10/07/2020
     map.addLayer({
@@ -314,35 +314,7 @@ map.on("load", function() {
                 95182, '#D62828',],
             'fill-opacity': 0
         }
-    }, 'waterway-shadow');
-/*
-    //Add the AMBA covid cases 
-    map.addLayer({
-        'id': 'ambaCovid',
-        'type': 'fill',
-        'source': {
-            'type': 'geojson',
-            'data': 'data/geojson/amba-covid-19-10072020.geojson'
-        },
-        'paint': {
-            'fill-color': ['step', ['get','casos-covid-19'],
-                '#f7f7f7',
-                54, '#FFF3D6', 
-                66, '#FFF3D6', 
-                75, '#FFF3D6', 
-                100,'#FFF3D6', 
-                157,'#FFF3D6', 
-                184,'#FFF3D6', 
-                345, '#FFF3D6', 
-                410, '#FFF3D6', 
-                549,'#FFE8AD',
-                1339, '#FAA307',
-                2228, '#DC2F02',
-                4454, '#D61801',
-                7293, '#D00000',],
-            'fill-opacity': 0
-        }
-    }, 'waterway-shadow');
+    }, firstSymbolId);
 
     //Add the Villas Miseria Layer
     map.addLayer({
@@ -357,6 +329,7 @@ map.on("load", function() {
           'fill-opacity': 0
         }
     }, firstSymbolId);
+    /*
 
     //Add the Villas Miseria Perimetros
     map.addLayer({
@@ -422,6 +395,34 @@ map.on("load", function() {
                 0.1381, '#969696',
                 0.1611, '#636363',
                 0.1981, '#252525'],
+            'fill-opacity': 0
+        }
+    }, firstSymbolId);
+
+    //Add the AMBA covid cases 
+    map.addLayer({
+        'id': 'ambaCovid',
+        'type': 'fill',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/amba-covid-19-10072020.geojson'
+        },
+        'paint': {
+            'fill-color': ['step', ['get','casos-covid-19'],
+                '#f7f7f7',
+                54, '#FFF3D6', 
+                66, '#FFF3D6', 
+                75, '#FFF3D6', 
+                100,'#FFF3D6', 
+                157,'#FFF3D6', 
+                184,'#FFF3D6', 
+                345, '#FFF3D6', 
+                410, '#FFF3D6', 
+                549,'#FFE8AD',
+                1339, '#FAA307',
+                2228, '#DC2F02',
+                4454, '#D61801',
+                7293, '#D00000',],
             'fill-opacity': 0
         }
     }, firstSymbolId);
