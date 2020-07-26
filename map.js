@@ -204,7 +204,7 @@ var map = new mapboxgl.Map({
 });
 
 // Instantiates the scrollama function
-//var scroller = scrollama();
+var scroller = scrollama();
 
 map.scrollZoom.disable();
 
@@ -426,7 +426,7 @@ map.on("load", function () {
     }, 'waterway-shadow');
 
     // Setup the instance, pass callback functions
-    /*scroller
+    scroller
         .setup({
             step: '.step',
             offset: 0.5,
@@ -453,9 +453,9 @@ map.on("load", function () {
             if (chapter.onChapterExit.length > 0) {
                 chapter.onChapterExit.forEach(setLayerOpacity);
             }
-        });*/
+        });
 });
 
 /* Here we watch for any resizing of the screen to
 adjust our scrolling setup */
-//window.addEventListener('resize', scroller.resize);
+window.addEventListener('resize', scroller.resize);
