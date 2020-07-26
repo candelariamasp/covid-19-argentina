@@ -108,11 +108,11 @@ var config = {
                 {
                     layer: 'villasMiseriaName',
                     opacity: 0
-                },
+                }/*,
                 {
                     layer: 'ponderacion',
                     opacity: 0
-                }/*
+                }
                 {
                     layer: 'ambaCovid',
                     opacity: 0
@@ -126,11 +126,11 @@ var config = {
                 {
                     layer: 'villasMiseriaName',
                     opacity: 0
-                },
+                },/*
                 {
                     layer: 'ponderacion',
                     opacity: 0
-                },
+                },*/
                 {
                     layer: 'villasMiseriaPerimetros',
                     opacity: 0 
@@ -167,10 +167,10 @@ var config = {
                     layer: 'villasMiseriaPeriBold',
                     opacity: 0
                 },
-                {
+                /*{
                     layer: 'ponderacion',
                     opacity: 1
-                }/*,
+                },
                 {
                     layer: 'ambaCovid',
                     opacity: 0
@@ -227,11 +227,11 @@ var config = {
                 {
                     layer: 'villasMiseriaName',
                     opacity: 0
-                },
+                },/*
                 {
                     layer: 'ponderacion',
                     opacity: 0
-                }/*,
+                },
                 {
                     layer: 'ambaCovid',
                     opacity: 1
@@ -264,11 +264,11 @@ var config = {
                 {
                     layer: 'villasMiseriaName',
                     opacity: 1
-                },
+                }/*,
                 {
                     layer: 'ponderacion',
-                    opacity: .75
-                }/*
+                    opacity: 0.75
+                }
                 {
                     layer: 'ambaCovid',
                     opacity: 0
@@ -312,11 +312,11 @@ var config = {
                 {
                     layer: 'villasMiseriaName',
                     opacity: 1
-                },
+                }/*,
                 {
                     layer: 'ponderacion',
                     opacity: 0
-                },/*
+                },
                 {
                     layer: 'hacinamientoCritico',
                     opacity: 1
@@ -357,11 +357,11 @@ var config = {
                 {
                     layer: 'villasMiseriaName',
                     opacity: 1
-                },
+                }/*,
                 {
                     layer: 'ponderacion',
                     opacity: 0
-                }/*,
+                },
                 {
                     layer: 'servInsuf',
                     opacity: 1
