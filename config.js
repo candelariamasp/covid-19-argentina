@@ -284,10 +284,10 @@ var config = {
             description: 'En un atropello a las libertades individuales y colectivas, sumado a las deudas sostenidas con las villas miseria, las autoridades locales, regionales y nacionales decidieron acordonar las Villas Itatí y Azul del resto de la ciudad, enfatizando todavía más su evidente segregación urbana y social. Por medio de una aislación obligatoria reforzada por la policía, ambos asentamientos fueron "desconectados" de su entorno por 14 días suscitando una reacción crítica por parte de los mismos habitantes y organizaciones de derechos humanos que reclamaron que dichas medidas empeorarían la innegable situación de aislamiento socio-económico, espacial y de salud ya existentes en las villas miseria. El gobernador de la Provincia de Buenos Aires Kiciloff retrucó diciendo que hubiera tomado la misma medida extremista de aislamiento en caso de tratarse de un pico de casos en un barrio privado. Preocupa la soltura con la que aboga por disminuir las libertades de los habitantes que representa y su falta de coherencia al creer que fuera posible un pico de casos de COVID-19 en un afluente barrio privado donde los recursos, el espacio y la información abundan en calidad y cantidad para evitar los contagios.',
             location: {},
             onChapterEnter: [
-                /*{
+                {
                     layer: 'hacinamientoCritico',
                     opacity: 0
-                }*/
+                }
             ],
             onChapterExit: []
         },
@@ -312,15 +312,15 @@ var config = {
                 {
                     layer: 'villasMiseriaName',
                     opacity: 1
-                }/*,
-                {
-                    layer: 'ponderacion',
-                    opacity: 0
                 },
                 {
                     layer: 'hacinamientoCritico',
                     opacity: 1
-                }*/
+                }/*
+                {
+                    layer: 'ponderacion',
+                    opacity: 0
+                }
             ],
             onChapterExit: []
         },
@@ -357,6 +357,10 @@ var config = {
                 {
                     layer: 'villasMiseriaName',
                     opacity: 1
+                },
+                {
+                    layer: 'hacinamientoCritico',
+                    opacity: 0
                 }/*,
                 {
                     layer: 'ponderacion',
@@ -365,10 +369,6 @@ var config = {
                 {
                     layer: 'servInsuf',
                     opacity: 1
-                },
-                {
-                    layer: 'hacinamientoCritico',
-                    opacity: 0
                 }*/
             ],
             onChapterExit: []
