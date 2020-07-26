@@ -231,20 +231,23 @@ map.on("load", function () {
             'data': 'data/geojson/world-covid-19-1807020.geojson'
         },
         'paint': {
-            'fill-color': ['step', ['get', 'global_covid19_live_update_Confirmed'],
+            'fill-color': [
+                'step', 
+                ['get', 'global_covid19_live_update_Confirmed'],
                 '#ffffff',
                 0, '#E0E0E0',
                 960, '#EAE2B7',
                 18421, '#FCBF49',
                 66226, '#F77F00',
                 217108, '#D62828',
-                2948397, '#003049',],
-            'fill-opacity': 0
+                2948397, '#003049',
+            ],
+        'fill-opacity': 0
         }
-    }, 'waterway-shadow');
+    }, firstSymbolId);
 
-     //Add the Agentina COVID-19 10/07/2020
-     map.addLayer({
+    //Add the Agentina COVID-19 10/07/2020
+    map.addLayer({
         'id': 'argCovid',
         'type': 'fill',
         'source': {
@@ -263,10 +266,98 @@ map.on("load", function () {
                 95182, '#D62828',],
             'fill-opacity': 0
         }
-    }, 'waterway-shadow');
-/*
-     //Add the AMBA covid cases 
+    }, firstSymbolId);
+
+    //Add the Villas Miseria Layer
+    map.addLayer({
+        'id': 'villasMiseria',
+        'type': 'fill',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/villas-miseria.geojson'
+        },
+        'paint': {
+          'fill-color': '#000000',
+          'fill-opacity': 0
+        }
+    }, firstSymbolId);
+    
+
+    //Add the Villas Miseria Perimetros
+    map.addLayer({
+        'id': 'villasMiseriaPerimetros',
+        'type': 'line',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/villas-miseria.geojson'
+        },
+        'paint': {
+          'line-color': '#D62828',
+          'line-width': 0.8
+        }
+    }, firstSymbolId);
+    
+
+     //Add the Villas Miseria Perimetros bolder
      map.addLayer({
+        'id': 'villasMiseriaPeriBold',
+        'type': 'line',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/villas-miseria.geojson'
+        },
+        'paint': {
+          'line-color': '#D62828',
+          'line-width': 3
+        }
+    }, firstSymbolId);
+    
+
+    // Add the labels layer
+    map.addLayer({
+        'id': 'villasMiseriaName',
+        'type': 'symbol',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/villas-miseria.geojson'
+        },
+        'layout': {
+            'text-field': ['get', 'Listado Nacional de Barrios 2018_Nombre Barrio 2'],
+            'text-allow-overlap': true,
+            'text-offset': [0, 0.8],
+            'text-anchor': 'center',
+            'text-size': 15
+        },
+        'paint': {
+            'text-color': "#000"
+        }
+    }, firstSymbolId);
+    
+    /*
+    
+    // Add the Ponderación map 
+    map.addLayer({
+        'id': 'ponderacion',
+        'type': 'fill',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/gba_caba_ponderacion.geojson'
+        },
+        'paint': {
+            'fill-color': ['step', ['get', 'Ponderacio'],
+                '#ffffff',
+                0.03, '#f7f7f7',
+                0.1161, '#cccccc',
+                0.1381, '#969696',
+                0.1611, '#636363',
+                0.1981, '#252525'],
+            'fill-opacity': 0
+        }
+    }, 'villasMiseria');
+
+*/
+    //Add the AMBA covid cases 
+    map.addLayer({
         'id': 'ambaCovid',
         'type': 'fill',
         'source': {
@@ -291,97 +382,15 @@ map.on("load", function () {
                 7293, '#D00000',],
             'fill-opacity': 0
         }
-    }, 'waterway-shadow');
-
-    //Add the Villas Miseria Layer
-    map.addLayer({
-        'id': 'villasMiseria',
-        'type': 'fill',
-        'source': {
-            'type': 'geojson',
-            'data': 'data/geojson/villas-miseria.geojson'
-        },
-        'paint': {
-          'fill-color': '#000000',
-          'fill-opacity': 0
-        }
-    }, firstSymbolId);
-
-    //Add the Villas Miseria Perimetros
-    map.addLayer({
-        'id': 'villasMiseriaPerimetros',
-        'type': 'line',
-        'source': {
-            'type': 'geojson',
-            'data': 'data/geojson/villas-miseria.geojson'
-        },
-        'paint': {
-          'line-color': '#D62828',
-          'line-width': 0.8
-        }
-    }, firstSymbolId);
-
-     //Add the Villas Miseria Perimetros bolder
-     map.addLayer({
-        'id': 'villasMiseriaPeriBold',
-        'type': 'line',
-        'source': {
-            'type': 'geojson',
-            'data': 'data/geojson/villas-miseria.geojson'
-        },
-        'paint': {
-          'line-color': '#D62828',
-          'line-width': 3
-        }
-    }, firstSymbolId);
-
-    // Add the labels layer
-    map.addLayer({
-        'id': 'villasMiseriaName',
-        'type': 'symbol',
-        'source': {
-            'type': 'geojson',
-            'data': 'data/geojson/villas-miseria.geojson'
-        },
-        'layout': {
-            'text-field': ['get', 'Listado Nacional de Barrios 2018_Nombre Barrio 2'],
-            'text-allow-overlap': true,
-            'text-offset': [0, 0.8],
-            'text-anchor': 'center',
-            'text-size': 15
-        },
-        'paint': {
-            'text-color': "#000"
-        }
-    }, firstSymbolId);
-    
-    // Add the Ponderación map 
-    map.addLayer({
-        'id': 'ponderacion',
-        'type': 'fill',
-        'source': {
-            'type': 'geojson',
-            'data': 'data/geojson/gba_caba_ponderacion.geojson'
-        },
-        'paint': {
-            'fill-color': ['step', ['get', 'Ponderacio'],
-                '#ffffff',
-                0.03, '#f7f7f7',
-                0.1161, '#cccccc',
-                0.1381, '#969696',
-                0.1611, '#636363',
-                0.1981, '#252525'],
-            'fill-opacity': 0
-        }
-    }, 'waterway-shadow');
-
+    }, 'villasMiseria');
+/*
     // Add the Hacinamiento map 
     map.addLayer({
         'id': 'hacinamientoCritico',
         'type': 'fill',
         'source': {
             'type': 'geojson',
-            'data': 'data/geojson/gba_caba_hacinamiento_critico.geojson'
+            'data': 'data/geojson/gba_caba_ponderacion.geojson'
         },
         'paint': {
             'fill-color': ['step', ['get', 'porc_hog_1'],
@@ -401,7 +410,7 @@ map.on("load", function () {
         'type': 'fill',
         'source': {
             'type': 'geojson',
-            'data': 'data/geojson/gba-serv-insuf.geojson'
+            'data': 'data/geojson/gba_caba_ponderacion.geojson'
         },
         'paint': {
             'fill-color': ['step', ['get', 'ccsb_insuf'],
@@ -421,7 +430,7 @@ map.on("load", function () {
                 997, '#DC2F02'],
             'fill-opacity': 0
         }
-    }, 'waterway-shadow');*/
+    }, firstSymbolId);*/
 
     // Setup the instance, pass callback functions
     scroller

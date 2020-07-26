@@ -1,33 +1,15 @@
-var config = {
-    style: 'mapbox://styles/candelariamasp/ckcwhpbke09ex1io49t31cgew',
+var config = {    
     accessToken: 'pk.eyJ1IjoiY2FuZGVsYXJpYW1hc3AiLCJhIjoiY2s4OHRpenVuMGNmeDNqbzF1ZmNnN2FwciJ9.e6kBICzbQ_RPjMFy5SgBtw',
-    showMarkers: false,
-    alignment: 'left',
+    style: 'mapbox://styles/candelariamasp/ckcwhpbke09ex1io49t31cgew',
     theme: 'light',
-    title: 'Pobreza y Pandemia en Latinoamérica',
-    subtitle: 'El caso de Buenos Aires',
-    byline: '',
+    alignment: 'left',
+    toptitle: "<a href='https://www.linkedin.com/in/candelariamasp/' target='_blank'>Candelaria Mas Pohmajevic</a> | Julio 2020",
+    title: 'Pobreza y Pandemia en Latinoamérica: el caso de Buenos Aires',
+    byline: "Revisor: David Smiley",
+    description: '<p>Al inicio de la pandemia del coronavirus, algunos presidentes latinoamericanos lo llamaron despectivamente "el virus de los ricos." Sin embargo, el COVID-19 no distingue sexo, religión o nacionalidad, y se propaga a tasas letales en comunidades donde el acceso a condiciones de vida y sanidad dignas no existen. Es por ello que en Latinoamérica los casos de contagios han "explotado" en los asentamientos informales como villas miseria o favelas donde el hacinamiento y la carencia de espacios públicos son moneda corriente. <br /><br />La Latinoamérica post-pandemia debe enfocarse en desarrollar ciudades resilientes soportadas por estructuras de comunidad partícipes de la creación y evolución del espacio que habitan, el modelo de gobernanza usual "desde arriba" es obsoleto y pone en riesgo a toda la población.</p>',
     footer: 'Esta historia se basa en datos de <a https://recursos-gis-covid-19-aeroterra.hub.arcgis.com/pages/datos-abiertos">Aeroterra</a>, Mapas de Vulnerabilidad del <http://datosabiertos.aeroterra.com/datasets/8ecd8e8d4703446781fcf8703473a56b_0?showData=true">Censo de 2010 del INDEC</a> y datos de casos de COVID-19 <a href="https://www.lanacion.com.ar/sociedad/provincia-provincia-mapa-del-coronavirus-argentina-nid2344407" target="_blank">en Argentina</a> y <a href="https://www.lanacion.com.ar/sociedad/municipio-municipio-mapa-del-coronavirus-provincia-buenos-nid2358970">en la Provincia de Buenos Aires</a> por Diario La Nación.</a>',
+    footerAttribution: '<a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox</a> | <a href="http://www.openstreetmap.org/about/" target="_blank">© OpenStreetMap</a> | <a href="https://www.linkedin.com/in/candelariamasp/" target="_blank">Candelaria Mas Pohmajevic</a> | <a>Architect and Urban Designer, Columbia GSAPP</a>',
     chapters: [
-        {//3 Densidad Urbana
-            id: 'intro',
-            title: "Pobreza y Pandemia en Latinoamérica: El caso de Buenos Aires",
-            description: "Al inicio de la pandemia del coronavirus, algunos presidentes latinoamericanos lo llamaron despectivamente \"el virus de los ricos.\" Sin embargo, el COVID-19 no distingue sexo, religión o nacionalidad, y se propaga a tasas letales en comunidades donde el acceso a condiciones de vida y sanidad dignas no existen. Es por ello que en Latinoamérica los casos de contagios han \"explotado\" en los asentamientos informales como villas miseria o favelas donde el hacinamiento y la carencia de espacios públicos son moneda corriente. <br /><br />La Latinoamérica post-pandemia debe enfocarse en desarrollar ciudades resilientes soportadas por estructuras de comunidad partícipes de la creación y evolución del espacio que habitan, el modelo de gobernanza usual \"desde arriba\" es obsoleto y pone en riesgo a toda la población.",
-            location: {
-                center: [-98, 10],
-                mobileCenter: [-85, 10],
-                zoom: 1.7,
-                pitch: 0,
-                bearing: 0
-            },
-            onChapterEnter: [
-                {
-                    layer: 'worldCovid',
-                    opacity: 1
-                }
-            ],
-            onChapterExit: []
-        },
         {//2 Latinoamérica epicentro 
             id: 'chapter1',
             title: 'Latinoamérica, el nuevo epicentro global de COVID-19',
@@ -53,6 +35,7 @@ var config = {
             type: 'pic',
             title: "La densidad urbana, un falso culpable",
             description: "La forma en la que el virus se ha propagado en cada lugar del mundo está directamente relacionada con las características demográficas e inequidades presentes en ellos. Inicialmente en Nueva York se había responsabilizado erróneamente a la densidad (habitantes por metro cuadrado) de la ciudad por la gran cantidad de casos y muertes por coronavirus.<span class='credit'>Crédito de Imagen: <a href='https://ny.curbed.com/2020/6/18/21295554/new-york-city-apartments-home-for-sale-plummet' target='_blank'>Curbed</a></span>",
+            /*quote: "<span class='below'>'“I heard it’s the most toxic waterway in all of United States”, highlighted a neighbor.</span>",*/
             location: {},
             onChapterEnter: [],
             onChapterExit: []
@@ -79,7 +62,8 @@ var config = {
                 }
             ],
             onChapterExit: []
-        },{//6 zoom 1 - BACasos
+        },
+        {//6 zoom 1 - BACasos
             id: 'BACasos',
             title: 'Buenos Aires: el foco del COVID-19 en Argentina',
             image: 'images/2-Argentina Covid.png',
@@ -102,17 +86,17 @@ var config = {
                     opacity: 1
                 },
                 {
-                    layer: 'villasMiseria',
+                    layer: 'villasMiseriaName',
                     opacity: 0
                 },
                 {
-                    layer: 'villasMiseriaName',
+                    layer: 'villasMiseria',
                     opacity: 0
                 },
                 {
                     layer: 'ambaCovid',
                     opacity: 0
-                }/*
+                },/*
                 {
                     layer: 'ponderacion',
                     opacity: 0
@@ -122,21 +106,22 @@ var config = {
                 {
                     layer: 'villasMiseria',
                     opacity: 0
-                },
-                {
-                    layer: 'villasMiseriaName',
-                    opacity: 0
                 },/*
                 {
                     layer: 'ponderacion',
                     opacity: 0
                 },*/
                 {
+                    layer: 'villasMiseriaName',
+                    opacity: 0
+                },
+                {
                     layer: 'villasMiseriaPerimetros',
                     opacity: 0 
                 }
             ]
         },
+
         {//7 BAVillas
             id: 'BAVillas',
             title: 'Barrios populares, alta vulnerabilidad ',
@@ -147,8 +132,8 @@ var config = {
                 center: [-58.695696, -34.619016],
                 mobileCenter: [-58.5, -34.619016],
                 zoom: 9.8,
-                pitch: 0,
-                bearing: 0
+                //pitch: 40,
+                //bearing: 45
             },
             onChapterEnter: [
                 {
@@ -156,29 +141,29 @@ var config = {
                     opacity: 0
                 },
                 {
-                    layer: 'argCovid',
+                    layer: 'ambaCovid',
                     opacity: 0
                 },
                 {
                     layer: 'villasMiseriaPerimetros',
                     opacity: 1
-                },
+                },/*
+                {
+                    layer: 'ponderacion',
+                    opacity: 1
+                },*/
                 {
                     layer: 'villasMiseriaPeriBold',
                     opacity: 0
                 },
                 {
-                    layer: 'ambaCovid',
+                    layer: 'argCovid',
                     opacity: 0
                 }
-                /*{
-                    layer: 'ponderacion',
-                    opacity: 1
-                }
-                */
             ],
             onChapterExit: []
         },
+
         {//8 Condiciones Precarias
             id: 'picture6',
             type: 'pic',
@@ -217,28 +202,30 @@ var config = {
                     opacity: 1
                 },
                 {
-                    layer: 'villasMiseriaPerimetros',
-                    opacity: 0
+                    layer: 'ambaCovid',
+                    opacity: 1
                 },
                 {
                     layer: 'villasMiseriaPeriBold',
+                    opacity: 0
+                },/*
+                {
+                    layer: 'ponderacion',
+                    opacity: 0
+                },*/
+                {
+                    layer: 'villasMiseriaPerimetros',
                     opacity: 0
                 },
                 {
                     layer: 'villasMiseriaName',
                     opacity: 0
-                },
-                {
-                    layer: 'ambaCovid',
-                    opacity: 1
-                }/*
-                {
-                    layer: 'ponderacion',
-                    opacity: 0
-                }*/
+                }
             ],
             onChapterExit: []
+                
         },
+
         {//10 El Caso de Itati y Azul
             id: 'ItatiAzulPobreza',
             title: 'Villas Itatí y Azul, vulnerabilidad extrema y foco del COVID-19',
@@ -249,8 +236,8 @@ var config = {
                 center: [-58.311234, -34.707846],
                 mobileCenter: [-58.304797, -34.703829],
                 zoom: 14.3,
-                pitch: 0,
-                bearing: 0
+                //pitch: 40,
+                //bearing: 45
             },
             onChapterEnter: [
                 {
@@ -258,39 +245,42 @@ var config = {
                     opacity: 1
                 },
                 {
-                    layer: 'villasMiseria',
-                    opacity: 0
-                },
-                {
                     layer: 'villasMiseriaName',
                     opacity: 1
-                },
-                {
-                    layer: 'ambaCovid',
-                    opacity: 0
-                }/*,
+                },/*
                 {
                     layer: 'ponderacion',
                     opacity: 0.75
+                },*/
+                {
+                    layer: 'ambaCovid',
+                    opacity: 0
+                },
+                {
+                    layer: 'villasMiseria',
+                    opacity: 0
                 }
-                */
             ],
             onChapterExit: []
         },
+
         {//11 Aislacion impuesta
             id: 'picture8',
             type: 'pic',
             title: 'Villas miseria, aislación impuesta',
             description: 'En un atropello a las libertades individuales y colectivas, sumado a las deudas sostenidas con las villas miseria, las autoridades locales, regionales y nacionales decidieron acordonar las Villas Itatí y Azul del resto de la ciudad, enfatizando todavía más su evidente segregación urbana y social. Por medio de una aislación obligatoria reforzada por la policía, ambos asentamientos fueron "desconectados" de su entorno por 14 días suscitando una reacción crítica por parte de los mismos habitantes y organizaciones de derechos humanos que reclamaron que dichas medidas empeorarían la innegable situación de aislamiento socio-económico, espacial y de salud ya existentes en las villas miseria. El gobernador de la Provincia de Buenos Aires Kiciloff retrucó diciendo que hubiera tomado la misma medida extremista de aislamiento en caso de tratarse de un pico de casos en un barrio privado. Preocupa la soltura con la que aboga por disminuir las libertades de los habitantes que representa y su falta de coherencia al creer que fuera posible un pico de casos de COVID-19 en un afluente barrio privado donde los recursos, el espacio y la información abundan en calidad y cantidad para evitar los contagios.',
+            /*audio: "<audio controls preload='none'><source src='audio/interview_gentrification_infrast_burdened_2.mp3'></audio>",*/
             location: {},
-            onChapterEnter: [
+            onChapterEnter: [/*
                 {
                     layer: 'hacinamientoCritico',
                     opacity: 0
-                }
+                }*/
             ],
             onChapterExit: []
         },
+
+
         {//12 Mapa Hacinamiento Critico 
             id: 'hacinamientoCritico',
             title: 'Villas Itatí y Azul, hacinamiento crítico',
@@ -301,8 +291,8 @@ var config = {
                 center: [-58.311234, -34.707846],
                 mobileCenter: [-58.304797, -34.703829],
                 zoom: 14.3,
-                pitch: 0,
-                bearing: 0
+                //pitch: 40,
+                //bearing: 45
             },
             onChapterEnter: [
                 {
@@ -312,15 +302,15 @@ var config = {
                 {
                     layer: 'villasMiseriaName',
                     opacity: 1
+                }/*,
+                {
+                    layer: 'ponderacion',
+                    opacity: 0
                 },
                 {
                     layer: 'hacinamientoCritico',
                     opacity: 1
-                }/*
-                {
-                    layer: 'ponderacion',
-                    opacity: 0
-                }
+                }*/
             ],
             onChapterExit: []
         },
@@ -331,12 +321,10 @@ var config = {
             title: 'Villas Itatí y Azul, precariedad extrema',
             description: "En 2018, el 70% de las viviendas en estos asentamientos fueron catalogadas como inestables y precarias, indicando que en 8 años las condiciones calamitosas de habitabilidad no habían cambiado. Casas de chapa, lona, plástico, cartón, entre otros, conforman la paleta constructiva en esta zona. Los materiales reciclables no son el problema, sino la desidia y la falta de voluntad para reintegrar esta isla urbana en un marco de desarrollo sostenible que provea oportunidades de trabajo y movilidad social a los más vulnerables de la sociedad.",
             location: {},
-            onChapterEnter: [
-                /*{
-                    layer: 'servInsuf',
-                    opacity: 0
-                }*/
-            ],
+            onChapterEnter: [/*{
+                layer: 'servInsuf',
+                opacity: 0
+            }*/],
             onChapterExit: []
         },
 
@@ -350,18 +338,14 @@ var config = {
                 center: [-58.311234, -34.707846],
                 mobileCenter: [-58.304797, -34.703829],
                 zoom: 14.3,
-                pitch: 0,
-                bearing: 0
+                //pitch: 40,
+                //bearing: 45
             },
             onChapterEnter: [
                 {
                     layer: 'villasMiseriaName',
                     opacity: 1
-                },
-                {
-                    layer: 'hacinamientoCritico',
-                    opacity: 0
-                }/*,
+                },/*
                 {
                     layer: 'ponderacion',
                     opacity: 0
@@ -369,6 +353,10 @@ var config = {
                 {
                     layer: 'servInsuf',
                     opacity: 1
+                },
+                {
+                    layer: 'hacinamientoCritico',
+                    opacity: 0
                 }*/
             ],
             onChapterExit: []
