@@ -1,44 +1,488 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <title>Pobreza y Pandemia en Latinoamérica: el caso de Buenos Aires</title>
-    
-    <meta name="description" content="Situación de aislamiento e impacto del COVID-19 en la Villa Azul y Villa Itatí de Buenos Aires, Argentina.">
-
-    <meta property="og:title" content="Pobreza y Pandemia en Latinoamérica" />
-    <meta property="og:image" content="https://candelariamasp.github.io/covid-19-argentina/images/villa-azul-precaria_la-nacion.jpg" />
-    <meta property="og:url" content="https://candelariamasp.github.io/covid-19-argentina/" />
-    <meta property="og:description" content="Visualización del impacto del COVID-19 en Latinoamérica">
-    <meta property="og:locale:alternate" content="es_AR" />
-    <meta property="twitter:image" content="https://candelariamasp.github.io/covid-19-argentina/images/villa-azul-precaria_la-nacion.jpg" />
-
-    <meta name="viewport" content="width=device-width,initial-scale=0.9">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-
-    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.js"></script>
-    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.css" rel="stylesheet" />
+    <meta charset='utf-8' />
+    <title>Scrollytelling Template</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
     <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
     <script src="https://unpkg.com/scrollama"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,400&family=Roboto+Slab:wght@200;300;400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MT5BNBNZ7J"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+    <style>
+        body {
+            margin:0; 
+            padding:0; 
+            font-family: sans-serif;
+        }
+        a, a:hover, a:visited {
+            color: #0071bc;
+        }
+        #map {
+            top:0; 
+            height: 100vh;
+            width:100vw;
+            position: fixed;
+            z-index: -5;
+        }
+        #header {
+            margin: 3vh auto;
+            width: 90vw;
+            padding: 2vh;
+            text-align: center;
+        }
+        #footer {
+            width: 100%;
+            min-height: 5vh;
+            padding-top: 2vh;
+            padding-bottom: 2vh;
+            text-align: center;
+            line-height: 25px;
+            font-size: 13px;
+        }
+        #features {
+            padding-top: 10vh;
+            padding-bottom: 10vh;
+            z-index: 100;
+        }
+        .centered {
+            width: 50vw;
+            margin: 0 auto;
+        }
+        .lefty {
+            width: 33vw;
+            margin-left: 5vw;
+        }
+        .righty {
+            width: 33vw;
+            margin-left: 62vw;
+        }
+        .light {
+            color: #444;
+            background-color: #fafafa;
+        }
+        .dark {
+            color: #fafafa;
+            background-color: #444;
+        }
+        .step {
+            padding-bottom: 50vh;
+            /* margin-bottom: 10vh; */
+            opacity: 0.25;
+        }
+        .step.active {
+            opacity: 0.9;
+        }
 
-        gtag('config', 'G-MT5BNBNZ7J');
-    </script>
+        .step div {
+            padding:  25px 50px;
+            line-height: 25px;
+            font-size: 13px;
+        }
+
+        .step img {
+            width: 100%;
+        }
+
+        @media (max-width: 750px) {
+            #features {
+                width: 90vw;
+                margin: 0 auto;
+            }
+        }
+        </style>
 </head>
-
 <body>
-    <div id="map"></div>
-    <div id="story"></div>
-    <script src="config.js"></script>
-    <script type="text/javascript" src="map.js"></script>
-</body>
 
+<div id="map"></div>
+<div id="story"></div>
+<script src="./config.js"></script>
+<script>
+var layerTypes = {
+    'fill': ['fill-opacity'],
+    'line': ['line-opacity'],
+    'circle': ['circle-opacity', 'circle-stroke-opacity'],
+    'symbol': ['icon-opacity', 'text-opacity'],
+    'raster': ['raster-opacity'],
+    'fill-extrusion': ['fill-extrusion-opacity']
+}
+
+var alignments = {
+    'left': 'lefty',
+    'center': 'centered',
+    'right': 'righty'
+}
+
+function getLayerPaintType(layer) {
+    var layerType = map.getLayer(layer).type;
+    return layerTypes[layerType];
+}
+
+function setLayerOpacity(layer) {
+    var paintProps = getLayerPaintType(layer.layer);
+    paintProps.forEach(function(prop) {
+        map.setPaintProperty(layer.layer, prop, layer.opacity);
+    });
+}
+
+var story = document.getElementById('story');
+var features = document.createElement('div');
+features.classList.add(alignments[config.alignment]);
+features.setAttribute('id', 'features');
+
+var header = document.createElement('div');
+
+if (config.title) {
+    var titleText = document.createElement('h1');
+    titleText.innerText = config.title;
+    header.appendChild(titleText);
+}
+
+if (config.subtitle) {
+    var subtitleText = document.createElement('h2');
+    subtitleText.innerText = config.subtitle;
+    header.appendChild(subtitleText);
+}
+
+if (config.byline) {
+    var bylineText = document.createElement('p');
+    bylineText.innerText = config.byline;
+    header.appendChild(bylineText);
+}
+
+if (header.innerText.length > 0) {
+    header.classList.add(config.theme);
+    header.setAttribute('id', 'header');
+    story.appendChild(header);
+}
+
+config.chapters.forEach((record, idx) => {
+    var container = document.createElement('div');
+    var chapter = document.createElement('div');
+    
+    if (record.title) {
+        var title = document.createElement('h3');
+        title.innerText = record.title;
+        chapter.appendChild(title);
+    }
+    
+    if (record.image) {
+        var image = new Image();  
+        image.src = record.image;  
+        chapter.appendChild(image);
+    }
+    
+    if (record.description) {
+        var story = document.createElement('p');
+        story.innerHTML = record.description;
+        chapter.appendChild(story);
+    }
+
+    container.setAttribute('id', record.id);
+    container.classList.add('step');
+    if (idx === 0) {
+        container.classList.add('active');
+    }
+
+    chapter.classList.add(config.theme);
+    container.appendChild(chapter);
+    features.appendChild(container);
+});
+
+story.appendChild(features);
+
+var footer = document.createElement('div');
+
+if (config.footer) {
+    var footerText = document.createElement('p');
+    footerText.innerHTML = config.footer;
+    footer.appendChild(footerText);
+}
+
+if (footer.innerText.length > 0) {
+    footer.classList.add(config.theme);
+    footer.setAttribute('id', 'footer');
+    story.appendChild(footer);
+}
+
+mapboxgl.accessToken = config.accessToken;
+
+const transformRequest = (url) => {
+    const hasQuery = url.indexOf("?") !== -1;	  
+    const suffix = hasQuery ? "&pluginName=journalismScrollytelling" : "?pluginName=journalismScrollytelling";	  
+    return {
+      url: url + suffix
+    }	  
+}
+
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: config.style,
+    center: config.chapters[0].location.center,
+    zoom: config.chapters[0].location.zoom,
+    bearing: config.chapters[0].location.bearing,
+    pitch: config.chapters[0].location.pitch,
+    scrollZoom: false,
+    transformRequest: transformRequest
+});
+
+var marker = new mapboxgl.Marker();
+if (config.showMarkers) {
+    marker.setLngLat(config.chapters[0].location.center).addTo(map);
+}
+
+// instantiate the scrollama
+var scroller = scrollama();
+
+map.on("load", function() {
+    // setup the instance, pass callback functions
+    scroller
+    .setup({
+        step: '.step',
+        offset: 0.5,
+        progress: true
+    })
+    .onStepEnter(response => {
+        var chapter = config.chapters.find(chap => chap.id === response.element.id);
+        response.element.classList.add('active');
+        map.flyTo(chapter.location);
+        if (config.showMarkers) {
+            marker.setLngLat(chapter.location.center);
+        }
+        if (chapter.onChapterEnter.length > 0) {
+            chapter.onChapterEnter.forEach(setLayerOpacity);
+        }
+    })
+    .onStepExit(response => {
+        var chapter = config.chapters.find(chap => chap.id === response.element.id);
+        response.element.classList.remove('active');
+        if (chapter.onChapterExit.length > 0) {
+            chapter.onChapterExit.forEach(setLayerOpacity);
+        }
+    });
+
+    // This is the function that finds the first symbol layer
+    var layers = map.getStyle().layers;
+    var firstSymbolId;
+    for (var i = 0; i < layers.length; i++) {
+        if (layers[i].type === 'symbol') {
+            firstSymbolId = layers[i].id;
+            break;
+        }
+    }
+
+    //Add the World COVID-19 07/07/2020
+    map.addLayer({
+        'id': 'worldCovid',
+        'type': 'fill',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/world-covid-19-1807020.geojson'
+        },
+        'paint': {
+            'fill-color': [
+                'step', 
+                ['get', 'global_covid19_live_update_Confirmed'],
+                '#ffffff',
+                0, '#E0E0E0',
+                960, '#EAE2B7',
+                18421, '#FCBF49',
+                66226, '#F77F00',
+                217108, '#D62828',
+                2948397, '#003049',
+            ],
+        'fill-opacity': 0
+        }
+    }, firstSymbolId);
+
+    //Add the Agentina COVID-19 10/07/2020
+    map.addLayer({
+        'id': 'argCovid',
+        'type': 'fill',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/arg-prov-covid-19.geojson'
+        },
+        'paint': {
+            'fill-color': ['step', ['get','arg-casos-covid-19_casos-covid-19-10072020'],
+                '#ffffff',
+                0,'#FFE8AD',
+                89, '#FFCB45',
+                263, '#FFC632',
+                485, '#FAA307',
+                854, '#F48C06',
+                2446, '#E85D04',
+                95182, '#D62828',],
+            'fill-opacity': 0
+        }
+    }, firstSymbolId);
+
+    //Add the Villas Miseria Layer
+    map.addLayer({
+        'id': 'villasMiseria',
+        'type': 'fill',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/villas-miseria.geojson'
+        },
+        'paint': {
+          'fill-color': '#000000',
+          'fill-opacity': 0
+        }
+    }, firstSymbolId);
+    
+
+    //Add the Villas Miseria Perimetros
+    map.addLayer({
+        'id': 'villasMiseriaPerimetros',
+        'type': 'line',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/villas-miseria.geojson'
+        },
+        'paint': {
+          'line-color': '#D62828',
+          'line-width': 0.8
+        }
+    }, firstSymbolId);
+    
+
+     //Add the Villas Miseria Perimetros bolder
+     map.addLayer({
+        'id': 'villasMiseriaPeriBold',
+        'type': 'line',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/villas-miseria.geojson'
+        },
+        'paint': {
+          'line-color': '#D62828',
+          'line-width': 3
+        }
+    }, firstSymbolId);
+    
+
+    // Add the labels layer
+    map.addLayer({
+        'id': 'villasMiseriaName',
+        'type': 'symbol',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/villas-miseria.geojson'
+        },
+        'layout': {
+            'text-field': ['get', 'Listado Nacional de Barrios 2018_Nombre Barrio 2'],
+            'text-allow-overlap': true,
+            'text-offset': [0, 0.8],
+            'text-anchor': 'center',
+            'text-size': 15
+        },
+        'paint': {
+            'text-color': "#000"
+        }
+    }, firstSymbolId);
+    
+    // Add the Ponderación map 
+    map.addLayer({
+        'id': 'ponderacion',
+        'type': 'fill',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/gba_caba_ponderacion.geojson'
+        },
+        'paint': {
+            'fill-color': ['step', ['get', 'Ponderacio'],
+                '#ffffff',
+                0.03, '#f7f7f7',
+                0.1161, '#cccccc',
+                0.1381, '#969696',
+                0.1611, '#636363',
+                0.1981, '#252525'],
+            'fill-opacity': 0
+        }
+    }, 'villasMiseria');
+
+
+    //Add the AMBA covid cases 
+    map.addLayer({
+        'id': 'ambaCovid',
+        'type': 'fill',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/amba-covid-19-10072020.geojson'
+        },
+        'paint': {
+            'fill-color': ['step', ['get','casos-covid-19'],
+                '#f7f7f7',
+                54, '#FFF3D6', 
+                66, '#FFF3D6', 
+                75, '#FFF3D6', 
+                100,'#FFF3D6', 
+                157,'#FFF3D6', 
+                184,'#FFF3D6', 
+                345, '#FFF3D6', 
+                410, '#FFF3D6', 
+                549,'#FFE8AD',
+                1339, '#FAA307',
+                2228, '#DC2F02',
+                4454, '#D61801',
+                7293, '#D00000',],
+            'fill-opacity': 0
+        }
+    }, 'villasMiseria');
+
+    // Add the Hacinamiento map 
+    map.addLayer({
+        'id': 'hacinamientoCritico',
+        'type': 'fill',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/gba_caba_ponderacion.geojson'
+        },
+        'paint': {
+            'fill-color': ['step', ['get', 'porc_hog_1'],
+                '#ffffff',
+                0, '#e5e5e5',
+                0.03, '#eae2b7',
+                0.07, '#fcbf49',
+                0.13, '#dc2f02',
+                0.31, '#dc2f02'],
+            'fill-opacity': 0
+        }
+    }, 'villasMiseria');
+
+     // Add the falta de baños map 
+     map.addLayer({
+        'id': 'servInsuf',
+        'type': 'fill',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/geojson/gba_caba_ponderacion.geojson'
+        },
+        'paint': {
+            'fill-color': ['step', ['get', 'ccsb_insuf'],
+                '#ffffff',
+                0, '#e5e5e5',
+                2, '#e5e5e5',
+                5, '#e5e5e5',
+                10, '#FFF9EB',
+                30, '#FFF9EB',
+                90, '#FFF9EB',
+                122, '#FFD465',
+                217, '#FFD465',
+                224, '#DC2F02',
+                309, '#DC2F02',
+                340, '#DC2F02',
+                456, '#DC2F02',
+                997, '#DC2F02'],
+            'fill-opacity': 0
+        }
+    }, 'villasMiseria');
+});
+
+// setup resize event
+window.addEventListener('resize', scroller.resize);
+
+</script>
+
+</body>
 </html>
