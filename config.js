@@ -108,13 +108,13 @@ var config = {
                 {
                     layer: 'villasMiseriaName',
                     opacity: 0
-                },/*
-                {
-                    layer: 'ambaCovid',
-                    opacity: 0
                 },
                 {
                     layer: 'ponderacion',
+                    opacity: 0
+                }/*
+                {
+                    layer: 'ambaCovid',
                     opacity: 0
                 }*/
             ],
@@ -126,12 +126,11 @@ var config = {
                 {
                     layer: 'villasMiseriaName',
                     opacity: 0
-                },/*
+                },
                 {
                     layer: 'ponderacion',
                     opacity: 0
                 },
-                */
                 {
                     layer: 'villasMiseriaPerimetros',
                     opacity: 0 
@@ -148,8 +147,8 @@ var config = {
                 center: [-58.695696, -34.619016],
                 mobileCenter: [-58.5, -34.619016],
                 zoom: 9.8,
-                //pitch: 40,
-                //bearing: 45
+                pitch: 0,
+                bearing: 0
             },
             onChapterEnter: [
                 {
@@ -167,15 +166,15 @@ var config = {
                 {
                     layer: 'villasMiseriaPeriBold',
                     opacity: 0
-                }/*,
-                {
-                    layer: 'ambaCovid',
-                    opacity: 0
                 },
                 {
                     layer: 'ponderacion',
                     opacity: 1
-                },
+                }/*,
+                {
+                    layer: 'ambaCovid',
+                    opacity: 0
+                }
                 */
             ],
             onChapterExit: []
@@ -228,14 +227,14 @@ var config = {
                 {
                     layer: 'villasMiseriaName',
                     opacity: 0
-                }/*,
-                {
-                    layer: 'ambaCovid',
-                    opacity: 1
                 },
                 {
                     layer: 'ponderacion',
                     opacity: 0
+                }/*,
+                {
+                    layer: 'ambaCovid',
+                    opacity: 1
                 }*/
             ],
             onChapterExit: []
@@ -265,11 +264,11 @@ var config = {
                 {
                     layer: 'villasMiseriaName',
                     opacity: 1
-                },/*
+                },
                 {
                     layer: 'ponderacion',
                     opacity: .75
-                },
+                }/*
                 {
                     layer: 'ambaCovid',
                     opacity: 0
@@ -313,11 +312,11 @@ var config = {
                 {
                     layer: 'villasMiseriaName',
                     opacity: 1
-                },/*
+                },
                 {
                     layer: 'ponderacion',
                     opacity: 0
-                },
+                },/*
                 {
                     layer: 'hacinamientoCritico',
                     opacity: 1
@@ -358,11 +357,11 @@ var config = {
                 {
                     layer: 'villasMiseriaName',
                     opacity: 1
-                },/*
+                },
                 {
                     layer: 'ponderacion',
                     opacity: 0
-                },
+                }/*,
                 {
                     layer: 'servInsuf',
                     opacity: 1
@@ -381,10 +380,10 @@ var config = {
             title: 'Villas Itatí y Azul, sin agua',
             description: 'La falta de agua en Itatí y Azul ha sido clave en la propagación del coronavirus junto con el hacinamiento crítico, las enfermedades crónicas y la falta de acceso a los servicios de sanidad. Todos ellos componen cada uno de los ejes del índice de vulnerabilidad que desprotege a las personas del virus y los convierte en víctimas aseguradas de la pandemia.<br /><br />La Organización Mundial de la Salud indica que los sistemas de higiene y saneamiento son fundamentales para proteger a las personas durante el brote del COVID-19. La práctica continua de medidas de higiene, lavado y desinfección de manos y tratamiento de basura correspondientes en las comunidades logran prevenir en gran medida la transmisión del virus entre personas.',
             location: {},
-            onChapterEnter: [{
+            onChapterEnter: [/*{
                 layer: 'servInsuf',
                 opacity: 0
-            }],
+            }*/],
             onChapterExit: []
         },
 
