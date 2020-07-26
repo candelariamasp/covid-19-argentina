@@ -13,7 +13,6 @@ var config = {
             id: 'intro',
             title: "Pobreza y Pandemia en Latinoamérica: El caso de Buenos Aires",
             description: "Al inicio de la pandemia del coronavirus, algunos presidentes latinoamericanos lo llamaron despectivamente \"el virus de los ricos.\" Sin embargo, el COVID-19 no distingue sexo, religión o nacionalidad, y se propaga a tasas letales en comunidades donde el acceso a condiciones de vida y sanidad dignas no existen. Es por ello que en Latinoamérica los casos de contagios han \"explotado\" en los asentamientos informales como villas miseria o favelas donde el hacinamiento y la carencia de espacios públicos son moneda corriente. <br /><br />La Latinoamérica post-pandemia debe enfocarse en desarrollar ciudades resilientes soportadas por estructuras de comunidad partícipes de la creación y evolución del espacio que habitan, el modelo de gobernanza usual \"desde arriba\" es obsoleto y pone en riesgo a toda la población.",
-            quote: "<span class='below'>'“I heard it’s the most toxic waterway in all of United States”, highlighted a neighbor.</span>",
             location: {
                 center: [-98, 10],
                 mobileCenter: [-85, 10],
@@ -54,7 +53,6 @@ var config = {
             type: 'pic',
             title: "La densidad urbana, un falso culpable",
             description: "La forma en la que el virus se ha propagado en cada lugar del mundo está directamente relacionada con las características demográficas e inequidades presentes en ellos. Inicialmente en Nueva York se había responsabilizado erróneamente a la densidad (habitantes por metro cuadrado) de la ciudad por la gran cantidad de casos y muertes por coronavirus.<span class='credit'>Crédito de Imagen: <a href='https://ny.curbed.com/2020/6/18/21295554/new-york-city-apartments-home-for-sale-plummet' target='_blank'>Curbed</a></span>",
-            /*quote: "<span class='below'>'“I heard it’s the most toxic waterway in all of United States”, highlighted a neighbor.</span>",*/
             location: {},
             onChapterEnter: [],
             onChapterExit: []
@@ -103,7 +101,7 @@ var config = {
                     layer: 'argCovid',
                     opacity: 1
                 },
-                {
+                /*{
                     layer: 'villasMiseriaName',
                     opacity: 0
                 },
@@ -118,10 +116,10 @@ var config = {
                 {
                     layer: 'ponderacion',
                     opacity: 0
-                }
+                }*/
             ],
             onChapterExit: [
-                {
+                /*{
                     layer: 'villasMiseria',
                     opacity: 0
                 },
@@ -136,10 +134,9 @@ var config = {
                 {
                     layer: 'villasMiseriaPerimetros',
                     opacity: 0 
-                }
+                }*/
             ]
-        },
-
+        },/*
         {//7 BAVillas
             id: 'BAVillas',
             title: 'Barrios populares, alta vulnerabilidad ',
@@ -181,7 +178,6 @@ var config = {
             ],
             onChapterExit: []
         },
-
         {//8 Condiciones Precarias
             id: 'picture6',
             type: 'pic',
@@ -243,7 +239,6 @@ var config = {
             onChapterExit: []
                 
         },
-
         {//10 El Caso de Itati y Azul
             id: 'ItatiAzulPobreza',
             title: 'Villas Itatí y Azul, vulnerabilidad extrema y foco del COVID-19',
@@ -254,8 +249,8 @@ var config = {
                 center: [-58.311234, -34.707846],
                 mobileCenter: [-58.304797, -34.703829],
                 zoom: 14.3,
-                //pitch: 40,
-                //bearing: 45
+                pitch: 0,
+                bearing: 0
             },
             onChapterEnter: [
                 {
@@ -281,13 +276,11 @@ var config = {
             ],
             onChapterExit: []
         },
-
         {//11 Aislacion impuesta
             id: 'picture8',
             type: 'pic',
             title: 'Villas miseria, aislación impuesta',
             description: 'En un atropello a las libertades individuales y colectivas, sumado a las deudas sostenidas con las villas miseria, las autoridades locales, regionales y nacionales decidieron acordonar las Villas Itatí y Azul del resto de la ciudad, enfatizando todavía más su evidente segregación urbana y social. Por medio de una aislación obligatoria reforzada por la policía, ambos asentamientos fueron "desconectados" de su entorno por 14 días suscitando una reacción crítica por parte de los mismos habitantes y organizaciones de derechos humanos que reclamaron que dichas medidas empeorarían la innegable situación de aislamiento socio-económico, espacial y de salud ya existentes en las villas miseria. El gobernador de la Provincia de Buenos Aires Kiciloff retrucó diciendo que hubiera tomado la misma medida extremista de aislamiento en caso de tratarse de un pico de casos en un barrio privado. Preocupa la soltura con la que aboga por disminuir las libertades de los habitantes que representa y su falta de coherencia al creer que fuera posible un pico de casos de COVID-19 en un afluente barrio privado donde los recursos, el espacio y la información abundan en calidad y cantidad para evitar los contagios.',
-            /*audio: "<audio controls preload='none'><source src='audio/interview_gentrification_infrast_burdened_2.mp3'></audio>",*/
             location: {},
             onChapterEnter: [
                 {
@@ -297,8 +290,6 @@ var config = {
             ],
             onChapterExit: []
         },
-
-
         {//12 Mapa Hacinamiento Critico 
             id: 'hacinamientoCritico',
             title: 'Villas Itatí y Azul, hacinamiento crítico',
@@ -309,8 +300,8 @@ var config = {
                 center: [-58.311234, -34.707846],
                 mobileCenter: [-58.304797, -34.703829],
                 zoom: 14.3,
-                //pitch: 40,
-                //bearing: 45
+                pitch: 0,
+                bearing: 0
             },
             onChapterEnter: [
                 {
@@ -356,8 +347,8 @@ var config = {
                 center: [-58.311234, -34.707846],
                 mobileCenter: [-58.304797, -34.703829],
                 zoom: 14.3,
-                //pitch: 40,
-                //bearing: 45
+                pitch: 0,
+                bearing: 0
             },
             onChapterEnter: [
                 {
@@ -401,6 +392,6 @@ var config = {
             location: {},
             onChapterEnter: [],
             onChapterExit: []
-        }
+        }*/
     ]
 };

@@ -264,7 +264,7 @@ map.on("load", function () {
             'fill-opacity': 0
         }
     }, 'waterway-shadow');
-
+/*
      //Add the AMBA covid cases 
      map.addLayer({
         'id': 'ambaCovid',
@@ -421,7 +421,7 @@ map.on("load", function () {
                 997, '#DC2F02'],
             'fill-opacity': 0
         }
-    }, 'waterway-shadow');
+    }, 'waterway-shadow');*/
 
     // Setup the instance, pass callback functions
     scroller
