@@ -159,9 +159,15 @@ if (config.subtitle) {
     header.appendChild(subtitleText);
 }
 
+if (config.toptitle) {
+    var toptitle = document.createElement('h4');
+    toptitle.innerHTML = config.toptitle;
+    header.appendChild(toptitle);
+}
+
 if (config.byline) {
     var bylineText = document.createElement('p');
-    bylineText.innerText = config.byline;
+    bylineText.innerHTML = config.byline;
     header.appendChild(bylineText);
 }
 
@@ -191,6 +197,13 @@ config.chapters.forEach((record, idx) => {
         var story = document.createElement('p');
         story.innerHTML = record.description;
         chapter.appendChild(story);
+    }
+
+    if (record.source) {
+        var source = document.createElement('p');
+        source.classList.add('Fuente');
+        source.innerHTML = 'Fuente: ' + record.source;
+        chapter.appendChild(source);
     }
 
     container.setAttribute('id', record.id);
