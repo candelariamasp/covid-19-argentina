@@ -24,10 +24,15 @@ var config = {
             onChapterEnter: [
                 {
                     layer: 'worldCovid',
-                    opacity: 1
+                    opacity: 0
                 }
             ],
-            onChapterExit: []
+            onChapterExit: [
+                {
+                    layer: 'worldCovid',
+                    opacity: 1
+                }
+            ]
         },
         {//2 Latinoamérica epicentro 
             id: 'chapter1',
