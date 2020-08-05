@@ -21,8 +21,8 @@ var config = {
                 bearing: 0
             },
             mobileLocation: {
-                mobileCenter: [-85, 10],
-                zoom:1.7,
+                center: [-85, 10],
+                zoom: 1.7,
                 pitch: 0,
                 bearing: 0
             },
@@ -44,24 +44,9 @@ var config = {
             title: 'Latinoamérica, el nuevo epicentro global de COVID-19',
             image: 'images/1-Covid Mundo.png',
             description: "El virus invisible ha matado casi 600.000 personas en el mundo, con epicentros de casos originalmente en China, Italia, España, Reino Unido y Estados Unidos (con más de 135.000 muertes alrededor del área metropolitana de Nueva York). Sin embargo, con la creciente atención de los medios y autoridades enfocada en la situación del Norte global, el Sur global quedó inadvertido hasta que Brasil se estableció como el segundo país con más casos de coronavirus luego de Estados Unidos. Otros países latinoamericanos siguen los mismos pasos.<span class='credit'>Fuente: <a href='https://coronavirus.jhu.edu/map.html' target='_blank'>Johns Hopkins CSSE</a>.</span>",
-            location: {
-                center: [-98, 10],
-                zoom: 1.7,
-                pitch: 0,
-                bearing: 0
-            },
-            mobileLocation: {
-                mobileCenter: [-85, 10],
-                zoom:1.7,
-                pitch: 0,
-                bearing: 0
-            },
-            onChapterEnter: [
-                {
-                    layer: 'worldCovid',
-                    opacity: 1
-                }
-            ],
+            location: {},
+            mobileLocation: {},
+            onChapterEnter: [],
             onChapterExit: []
         },
         {//3 Densidad Urbana
@@ -91,12 +76,26 @@ var config = {
             image: "images/ba-covid-19-precautions-6.jpeg",
             title: 'Las Áreas Metropolitanas están mejor preparadas para contener el virus',
             description: "Por otro lado, las Áreas Metropolitanas están mejor preparadas para contener una situación de esta envergadura creando medidas ágiles y efectivas que puedan frenar el contagio entre sus habitantes. Además los servicios de salud, infraestructura y profesionales concentrados en estas áreas ofrecen mejores servicios a la comunidad en una pandemia.<span class='credit'>Imagen: Calle en Buenos Aires, <a href='http://observatorioamba.org/noticias-y-agenda/noticia/coronavirus-en-la-argentina-como-cambiaran-las-ciudades-con-el-distanciamiento-social' target='_blank'>El Observatorio Metropolitano</a></span>",
-            location: {},
-            mobileLocation: {},
+            location: {
+                center: [-98, 10],
+                zoom: 1.7,
+                pitch: 0,
+                bearing: 0
+            },
+            mobileLocation: {
+                center: [-85, 10],
+                zoom: 1.7,
+                pitch: 0,
+                bearing: 0
+            },
             onChapterEnter: [
                 {
                     layer: 'argCovid',
                     opacity: 0
+                },
+                {
+                    layer: 'worldCovid',
+                    opacity: 1
                 }
             ],
             onChapterExit: []
@@ -113,10 +112,10 @@ var config = {
                 //bearing: 45
             },
             mobileLocation: {
-                mobileCenter: [-67.560250, -40.096309],
-                zoom:3.2,
-                pitch: 0,
-                bearing: 0
+                center: [-65.560250, -40.096309],
+                zoom: 3.2,
+                //pitch: 0,
+                //bearing: 0
             },
             onChapterEnter: [
                 {
@@ -176,8 +175,8 @@ var config = {
                 bearing: 0
             },
             mobileLocation: {
-                mobileCenter: [-58.5, -34.619016],
-                zoom:8,
+                center: [-58.5, -34.619016],
+                zoom: 8.5,
                 pitch: 0,
                 bearing: 0
             },
@@ -251,8 +250,8 @@ var config = {
                 bearing: 0
             },
             mobileLocation: {
-                mobileCenter: [-58.5, -34.619016],
-                zoom:8,
+                center: [-58.5, -34.619016],
+                zoom: 8.5,
                 pitch: 0,
                 bearing: 0
             },
@@ -306,8 +305,8 @@ var config = {
                 bearing: 0
             },
             mobileLocation: {
-                mobileCenter: [-58.304797, -34.703829],
-                zoom:13,
+                center: [-58.304797, -34.703829],
+                zoom: 13,
                 pitch: 0,
                 bearing: 0
             },
@@ -343,9 +342,14 @@ var config = {
             description: 'En un atropello a las libertades individuales y colectivas, sumado a las deudas sostenidas con las villas miseria, las autoridades locales, regionales y nacionales decidieron acordonar las Villas Itatí y Azul del resto de la ciudad, enfatizando todavía más su evidente segregación urbana y social. Por medio de una aislación obligatoria reforzada por la policía, ambos asentamientos fueron "desconectados" de su entorno por 14 días suscitando una reacción crítica por parte de los mismos habitantes y organizaciones de derechos humanos que reclamaron que dichas medidas empeorarían la innegable situación de aislamiento socio-económico, espacial y de salud ya existentes en las villas miseria. El gobernador de la Provincia de Buenos Aires Kiciloff retrucó diciendo que hubiera tomado la misma medida extremista de aislamiento en caso de tratarse de un pico de casos en un barrio privado. Preocupa la soltura con la que aboga por disminuir las libertades de los habitantes que representa y su falta de coherencia al creer que fuera posible un pico de casos de COVID-19 en un afluente barrio privado donde los recursos, el espacio y la información abundan en calidad y cantidad para evitar los contagios. <span class="credit">Imagen: Villas Itatí y Azul acordonadas, <a href="https://www.lanacion.com.ar/politica/coronavirus-argentina-se-detectaron-1231-casos-villas-nid2373812" target="_blank">Diario La Nación</a></span>', 
             location: {},
             mobileLocation: {},
-            onChapterEnter: [{
+            onChapterEnter: [
+                {
                     layer: 'hacinamientoCritico',
                     opacity: 0
+                },
+                {
+                    layer: 'ponderacion',
+                    opacity: 0.75
                 }
             ],
             onChapterExit: []
@@ -356,18 +360,8 @@ var config = {
             image: 'images/6-Hacinamiento.png',
             description: "Son casi 5.000 familias las que viven hacinadas en Itatí y Azul, con más de tres personas por habitación, según indican los datos del INDEC de 2010, reforzados por dos relevamientos en <a href='http://www.estadistica.ec.gba.gov.ar/dpe/images/Informe_Censo_Villa_Itat%C3%AD_-_Villa_Azul_1.pdf' target='_blank'>2018</a> y <a href='http://documents1.worldbank.org/curated/en/778971550482375521/pdf/Evaluaci-n-Social.pdf' target='_blank'>2019</a> realizados por las más recientes gestiones de gobierno de la Provincia de Buenos Aires. Las probabilidades de contagio aumentan en espacios hacinados ya que las personas no pueden aislarse de sus familiares que han contraído el virus. En este caso, a falta de testeos y servicios médicos en la zona aumentaron los contagios.", 
             source: '<a href="http://datosabiertos.aeroterra.com/datasets/8ecd8e8d4703446781fcf8703473a56b_0?showData=true" target="_blank">Aeroterra, ESRI</a>', 
-            location: {
-                center: [-58.311234, -34.707846],
-                zoom: 14.3,
-                pitch: 0,
-                bearing: 0
-            },
-            mobileLocation: {
-                mobileCenter: [-58.304797, -34.703829],
-                zoom:13,
-                pitch: 0,
-                bearing: 0
-            },
+            location: {},
+            mobileLocation: {},
             onChapterEnter: [
                 {
                     layer: 'villasMiseriaPeriBold',
@@ -401,6 +395,10 @@ var config = {
                 {
                     layer: 'servInsuf',
                     opacity: 0
+                },
+                {
+                    layer: 'hacinamientoCritico',
+                    opacity: 1
                 }
             ],
             onChapterExit: []
@@ -412,19 +410,8 @@ var config = {
             image: 'images/7-Servicios Insuficientes.png',
             description: "En Villa Azul, el 10% de las casas no cuenta con un baño y el 70% de los baños de ambas villas no tienen cloacas, desembocando a excavaciones en la tierra o a cielo abierto. Estos asentamientos informales son una isla donde ni los servicios, ni la salud existen, pero la pobreza sostenida y el atropello a los derechos proliferan.", 
             source: '<a href="http://datosabiertos.aeroterra.com/datasets/8ecd8e8d4703446781fcf8703473a56b_0?geometry=148.828%2C-59.791%2C83.964%2C-13.392&showData=true" target="_blank">Aeroterra, ESRI</a>', 
-            location: {
-                center: [-58.311234, -34.707846],
-                mobileCenter: [-58.304797, -34.703829],
-                zoom: 14.3,
-                pitch: 0,
-                bearing: 0
-            },
-            mobileLocation: {
-                mobileCenter: [-58.304797, -34.703829],
-                zoom:13,
-                pitch: 0,
-                bearing: 0
-            },
+            location: {},
+            mobileLocation: {},
             onChapterEnter: [
                 {
                     layer: 'villasMiseriaName',
