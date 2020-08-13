@@ -443,9 +443,12 @@ var config = {
             mobileLocation: {},
             onChapterEnter: [{
                 layer: 'servInsuf',
-                opacity: 0
+                opacity: 1
             }],
-            onChapterExit: []
+            onChapterExit: [{
+                layer: 'servInsuf',
+                opacity: 0
+            }]
         },
 
         {//16 Futuro sostenible y equitativo
