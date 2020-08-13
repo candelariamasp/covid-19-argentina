@@ -258,12 +258,12 @@ map.on("load", function () {
             'fill-color': ['step', ['get','arg-casos-covid-19_casos-covid-19-10072020'],
                 '#ffffff',
                 0,'#FFE8AD',
-                89, '#FFCB45',
-                263, '#FFC632',
-                485, '#FAA307',
-                854, '#F48C06',
-                2446, '#E85D04',
-                95182, '#D62828',],
+                20, '#FFCB45',
+                152, '#FFC632',
+                373, '#FAA307',
+                1074, '#F48C06',
+                3358, '#E85D04',
+                98228, '#D62828',],
             'fill-opacity': 0
         }
     }, firstSymbolId);
@@ -369,17 +369,17 @@ map.on("load", function () {
                 '#f7f7f7',
                 54, '#FFF3D6', 
                 66, '#FFF3D6', 
-                75, '#FFF3D6', 
+                83, '#FFF3D6', 
                 100,'#FFF3D6', 
                 157,'#FFF3D6', 
                 184,'#FFF3D6', 
                 345, '#FFF3D6', 
                 410, '#FFF3D6', 
-                549,'#FFE8AD',
-                1339, '#FAA307',
-                2228, '#DC2F02',
-                4454, '#D61801',
-                7293, '#D00000',],
+                943,'#FFE8AD',
+                2368, '#FAA307',
+                4156, '#DC2F02',
+                7438, '#D61801',
+                13882, '#D00000',],
             'fill-opacity': 0
         }
     }, 'villasMiseria');
