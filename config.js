@@ -43,7 +43,7 @@ var config = {
             id: 'chapter1',
             title: 'Latinoamérica, el nuevo epicentro global de COVID-19',
             image: 'images/1-Covid Mundo.png',
-            description: "El virus invisible ha matado casi 600.000 personas en el mundo, con epicentros de casos originalmente en China, Italia, España, Reino Unido y Estados Unidos (con más de 135.000 muertes alrededor del área metropolitana de Nueva York). Sin embargo, con la creciente atención de los medios y autoridades enfocada en la situación del Norte global, el Sur global quedó inadvertido hasta que Brasil se estableció como el segundo país con más casos de coronavirus luego de Estados Unidos. Otros países latinoamericanos siguen los mismos pasos.<span class='credit'>Fuente: <a href='https://coronavirus.jhu.edu/map.html' target='_blank'>Johns Hopkins CSSE</a>.</span>",
+            description: "El virus invisible ha matado casi 600.000 personas en el mundo, con epicentros de casos originalmente en China, Italia, España, Reino Unido y Estados Unidos (con aproximadamente 35.000 muertes alrededor del área metropolitana de Nueva York). Sin embargo, con la creciente atención de los medios y autoridades enfocada en la situación del Norte global, el Sur global quedó inadvertido hasta que Brasil se estableció como el segundo país con más casos de coronavirus luego de Estados Unidos. Otros países latinoamericanos siguen los mismos pasos.<span class='credit'>Fuente: <a href='https://coronavirus.jhu.edu/map.html' target='_blank'>Johns Hopkins CSSE</a>.</span>",
             location: {},
             mobileLocation: {},
             onChapterEnter: [],
